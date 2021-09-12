@@ -122,8 +122,10 @@ Three main content areas can provide the functions required.
 
 #### Wireframes
 
-Summary about wireframes.
+Wireframes showing layout plans for differnt devices.
+
 ![An image previewing some of the wireframes made for the project](assets/wireframes/wireframes.png)
+
 The complete set of wireframes can be viewed in via these images:
  - [Mobile Wireframes](assets/wireframes/mobile-wireframes.png)
  - [Tablet Wireframes](assets/wireframes/tablet-wireframes.png)

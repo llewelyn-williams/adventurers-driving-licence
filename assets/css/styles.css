@@ -1,0 +1,9 @@
+div {
+    width: 170px;
+    height: 60px;
+    margin: 50px auto;
+    background-color: blanchedalmond;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 60px;
+}
