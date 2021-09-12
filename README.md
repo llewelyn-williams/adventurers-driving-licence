@@ -123,11 +123,11 @@ Three main content areas can provide the functions required.
 #### Wireframes
 
 Summary about wireframes.
-![An image previewing some of the wireframes made for the project](assets/wireframes/rhondda-taekwondo-home-wireframe.jpg)
+![An image previewing some of the wireframes made for the project](assets/wireframes/wireframes.png)
 The complete set of wireframes can be viewed in via these images:
- - [Home Wireframes](assets/wireframes/rhondda-taekwondo-home-wireframe.jpg)
- - [Classes Wireframes](assets/wireframes/rhondda-taekwondo-classes-wireframe.jpg)
- - [Contact Wireframes](assets/wireframes/rhondda-taekwondo-contact-wireframe.jpg)
+ - [Mobile Wireframes](assets/wireframes/mobile-wireframes.png)
+ - [Tablet Wireframes](assets/wireframes/tablet-wireframes.png)
+ - [Desktop Wireframes](assets/wireframes/desktop-wireframes.png)
 
 
 ### Surface
