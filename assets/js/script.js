@@ -16,7 +16,7 @@ function moveCard(){
         clearInterval(cardAnimator); //stop the setInterval
         card1.style.left = "0px"; // set the card back to its intended end position.
     };
-}
+};
 
 
 // Put content from massive object onto the page
@@ -37,6 +37,22 @@ card2.innerHTML = exam.question1.answers.answer2.answerText;
 card3.innerHTML = exam.question1.answers.answer3.answerText;
 
 
+//GameState
+let questioning = true;
 
+if (questioning){
+    document.getElementById("title").hidden = true;
+    document.getElementById("start").hidden = true;
+    document.getElementById("options").hidden  = true;
+};
+
+let newgame = false;
+
+if (newgame){
+    questionCard.hidden = true;
+    card1.hidden = true;
+    card2.hidden = true;
+    card3.hidden = true;
+};
 
 
