@@ -166,6 +166,8 @@ Design choices are reminiscent of the medieval tavern theme often found in fanta
 	 - To provide placeholder images during development
   - [favicon.io](https://favicon.io/emoji-favicons/martial-arts-uniform)
 	 - To generate favicon.ico
+  - [JSON Formatter - JSON Editor](https://jsonformatter.org/json-editor)
+	 - To help generate JSON structure
 
 
 ## Testing
