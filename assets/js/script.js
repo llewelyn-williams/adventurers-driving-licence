@@ -37,22 +37,21 @@ card2.innerHTML = exam.question1.answers.answer2.answerText;
 card3.innerHTML = exam.question1.answers.answer3.answerText;
 
 
-//GameState
-const questioning = true;
+//Page Display
 
-if (questioning){
-    document.getElementById("title").hidden = true;
-    document.getElementById("start").hidden = true;
-    document.getElementById("options").hidden  = true;
+//A variable that holds which page is desired.
+let page = "landing";
+//Get all the sections (differnt "pages").
+const sections = document.getElementsByTagName("section");
+//Get the one you want as determined by the variable.
+const activeSection = document.getElementsByClassName(page);
+//Iterate through all the sections
+for (section of sections){
+    //Change the display over every section to none.
+    section.style.display = "none";
+    //But then if the section is the one you want...
+    if (section == activeSection[0]){
+        //Change just its display back to block.
+        section.style.display = "block";
+    }
 }
-
-const newgame = false;
-
-if (newgame){
-    questionCard.hidden = true;
-    card1.hidden = true;
-    card2.hidden = true;
-    card3.hidden = true;
-}
-
-
