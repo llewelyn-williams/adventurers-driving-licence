@@ -102,16 +102,21 @@ function calculateMostOf(abcs){
             charlies ++;
         }
     }
-    if(alphas > betas){
+    if(alphas > betas && alphas > charlies){
         most = ` <span style="font-style: italic;">A</span>s`;
-    }
-    if (betas > alphas){
+    } else if (betas > alphas && betas > charlies){
         most = ` <span style="font-style: italic;">B</span>s`;
-    }
-    if (charlies > alphas || charlies > betas){
+    } else if (charlies > alphas && charlies > betas){
         most = ` <span style="font-style: italic;">C</span>s`;
+    } else if (alphas === betas && alphas > charlies){
+        most = ` <span style="font-style: italic;">A & B</span>s`;
+    } else if (betas === charlies && betas > alphas){
+        most = ` <span style="font-style: italic;">B & C</span>s`;
+    } else if (charlies === alphas && charlies > betas){
+        most = ` <span style="font-style: italic;">A & C</span>s`;
+    } else if (alphas === betas && alphas === charlies){
+        most = ` <span style="font-style: italic;">A & b & C</span>s`;
     }
-    console.log(most);
     return most;
 }
 
