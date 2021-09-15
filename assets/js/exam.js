@@ -1,4 +1,4 @@
-//Question Data
+// Question Data
 const exam = {
     "question1": {
       "questionText": "Question 1",

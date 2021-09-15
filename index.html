@@ -14,8 +14,9 @@
 
     <section class="landing">
         <div></h1>Game Title</h1></div>
-        <button id="start">Start</button>
-        <button id="options">Options</button>
+        <button id="start" onclick="changePage('question');">Start</button>
+        <button id="options" onclick="changePage('options');">Options</button>
+        <button id="credits" onclick="changePage('credits');">Credits</button>
     </section>
 
     <section class="options">
@@ -24,7 +25,7 @@
         <label for="music">Music</label>
         <input type="checkbox" id="sounds" name="saounds" checked>
         <label for="sounds">Sounds</label>
-        <button id="options">Back</button>
+        <button id="options-return" onclick="changePage('landing');">Back</button>
     </section>
 
     <section class="credits">
@@ -33,7 +34,7 @@
         <p>Attribution 2</p>
         <p>Attribution 3</p>
         <p>Attribution 4</p>
-        <button id="options">Back</button>
+        <button id="credits-return" onclick="changePage('landing');">Back</button>
     </section>
 
     <section class="dialogue">
@@ -47,7 +48,9 @@
         <div id="card3">Card 3</div>
     </section>
     
-    <footer>Footer Content</footer>
+    <footer>Footer Content
+        <button id="footer-return" onclick="changePage('landing');">Back</button>
+    </footer>
     <script src="assets/js/exam.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
