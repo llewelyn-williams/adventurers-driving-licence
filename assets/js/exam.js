@@ -41,7 +41,7 @@ const exam = {
       }
     },
     "question3": {
-      "questionText": "Question 2",
+      "questionText": "Question 3",
       "answers": {
         "answer1": {
           "answerText": "Q3 Answer One",
