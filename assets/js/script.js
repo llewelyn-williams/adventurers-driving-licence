@@ -1,10 +1,15 @@
-// the first div
+// Various Elements by ID
+const questionCard = document.getElementById("question-display");
 const card1 = document.getElementById("card1");
+const card2 = document.getElementById("card2");
+const card3 = document.getElementById("card3");
+
+
+//Animations
 
 // position it nearly completely off to the left
 document.getElementById("card1").style.left = - (screen.width/2 + 60) + "px";
-// check it's position in the console
-console.log (document.getElementById("card1").style.left);
+
 // this presumabley creates 120fps style fluidity
 const cardAnimator = setInterval(moveCard, 1000/120);
 
@@ -28,21 +33,41 @@ function moveCard(){
 }
 
 
-// Put content from massive object onto the page
+// Progressing Questions
 
-// Variables for Page elements
-// the question card
-const questionCard = document.getElementById("question-display");
-// the second div
-const card2 = document.getElementById("card2");
-// the third div
-const card3 = document.getElementById("card3");
+// Vaiable to track which question we are on.
+let currentQuestion = 1;
 
-// Set the innerHTML of the page elements
+// Set the initial innerHTML of the page elements
 questionCard.innerHTML = exam.question1.questionText;
 card1.innerHTML = exam.question1.answers.answer1.answerText;
 card2.innerHTML = exam.question1.answers.answer2.answerText;
 card3.innerHTML = exam.question1.answers.answer3.answerText;
+
+// Add event listeners for accepting answers
+card1.addEventListener("click", acceptAnswer);
+card2.addEventListener("click", acceptAnswer);
+card3.addEventListener("click", acceptAnswer);
+
+// Advance the tracker and change the values of the cards.
+function acceptAnswer(){
+    // But only advance if there's still another quetion in exam to do so
+    // I wasn't sure how to "get the length" of a object as it were
+    // Hint found on StackOverflow:
+    // https://stackoverflow.com/questions/5223/length-of-a-javascript-object
+    if(currentQuestion < Object.keys(exam).length){
+        currentQuestion ++;
+        console.log(currentQuestion);
+        theQuestion = "question" + currentQuestion;
+        questionCard.innerHTML = exam[theQuestion].questionText;
+        card1.innerHTML = exam[theQuestion].answers.answer1.answerText;
+        console.log(Object.keys(exam).length);
+        card2.innerHTML = exam[theQuestion].answers.answer2.answerText;
+        card3.innerHTML = exam[theQuestion].answers.answer3.answerText;
+    } else {
+        console.log("END!");
+    }
+}
 
 
 // Page Display
