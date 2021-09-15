@@ -5,17 +5,17 @@ const exam = {
       "answers": {
         "answer1": {
           "answerText": "Q1 Answer One",
-          "answerStat": 5,
+          "answerStat": "a",
           "answerResponse": "Q1 A1 Response"
         },
         "answer2": {
           "answerText": "Q1 Answer Two",
-          "answerStat": 5,
+          "answerStat": "b",
           "answerResponse": "Q1 A2 Response"
         },
         "answer3": {
           "answerText": "Q1 Answer Three",
-          "answerStat": 5,
+          "answerStat": "c",
           "answerResponse": "Q1 A3 Response"
         }
       }
@@ -25,17 +25,17 @@ const exam = {
       "answers": {
         "answer1": {
           "answerText": "Q2 Answer One",
-          "answerStat": 5,
+          "answerStat": "a",
           "answerResponse": "Q2 A1 Response"
         },
         "answer2": {
           "answerText": "Q2 Answer Two",
-          "answerStat": 5,
+          "answerStat": "b",
           "answerResponse": "Q2 A2 Response"
         },
         "answer3": {
           "answerText": "Q2 Answer Three",
-          "answerStat": 5,
+          "answerStat": "c",
           "answerResponse": "Q2 A3 Response"
         }
       }
@@ -45,17 +45,17 @@ const exam = {
       "answers": {
         "answer1": {
           "answerText": "Q3 Answer One",
-          "answerStat": 5,
+          "answerStat": "a",
           "answerResponse": "Q3 A1 Response"
         },
         "answer2": {
           "answerText": "Q3 Answer Two",
-          "answerStat": 5,
+          "answerStat": "b",
           "answerResponse": "Q3 A2 Response"
         },
         "answer3": {
           "answerText": "Q3 Answer Three",
-          "answerStat": 5,
+          "answerStat": "c",
           "answerResponse": "Q3 A3 Response"
         }
       }
@@ -65,17 +65,17 @@ const exam = {
       "answers": {
         "answer1": {
           "answerText": "Q4 Answer One",
-          "answerStat": 5,
+          "answerStat": "a",
           "answerResponse": "Q4 A1 Response"
         },
         "answer2": {
           "answerText": "Q4 Answer Two",
-          "answerStat": 5,
+          "answerStat": "b",
           "answerResponse": "Q4 A2 Response"
         },
         "answer3": {
           "answerText": "Q4 Answer Three",
-          "answerStat": 5,
+          "answerStat": "c",
           "answerResponse": "Q4 A3 Response"
         }
       }
@@ -85,17 +85,17 @@ const exam = {
       "answers": {
         "answer1": {
           "answerText": "Q5 Answer One",
-          "answerStat": 5,
+          "answerStat": "a",
           "answerResponse": "Q5 A1 Response"
         },
         "answer2": {
           "answerText": "Q5 Answer Two",
-          "answerStat": 5,
+          "answerStat": "b",
           "answerResponse": "Q5 A2 Response"
         },
         "answer3": {
           "answerText": "Q5 Answer Three",
-          "answerStat": 5,
+          "answerStat": "c",
           "answerResponse": "Q5 A3 Response"
         }
       }

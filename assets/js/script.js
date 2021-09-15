@@ -35,6 +35,9 @@ function moveCard(){
 
 // Progressing Questions
 
+const answers = []
+let selectedAnswer = 0
+
 // Vaiable to track which question we are on.
 let currentQuestion = 1;
 
@@ -50,7 +53,16 @@ card2.addEventListener("click", acceptAnswer);
 card3.addEventListener("click", acceptAnswer);
 
 // Advance the tracker and change the values of the cards.
-function acceptAnswer(){
+function acceptAnswer(e){
+
+    let theQuestion = "question" + currentQuestion;
+
+    // Append stat to aswers array
+    selectedAnswer = Number(this.id.slice("card".length, this.id.length));
+    answerStat = exam[theQuestion].answers["answer"+selectedAnswer].answerStat;
+    answers.push(answerStat);
+    console.log(answers);
+
     // But only advance if there's still another quetion in exam to do so
     // I wasn't sure how to "get the length" of a object as it were
     // Hint found on StackOverflow:
@@ -61,12 +73,46 @@ function acceptAnswer(){
         theQuestion = "question" + currentQuestion;
         questionCard.innerHTML = exam[theQuestion].questionText;
         card1.innerHTML = exam[theQuestion].answers.answer1.answerText;
-        console.log(Object.keys(exam).length);
         card2.innerHTML = exam[theQuestion].answers.answer2.answerText;
         card3.innerHTML = exam[theQuestion].answers.answer3.answerText;
     } else {
+        // Last answer given. End.
         console.log("END!");
+        console.log(answers);
+        changePage("licence");
+        console.log(calculateMostOf(answers));
+        document.getElementById("result-display-text").innerHTML += calculateMostOf(answers);
     }
+
+    
+}
+
+function calculateMostOf(abcs){
+ let alphas = 0;
+ let betas = 0;
+ let charlies = 0;
+ let most = ` <span style="font-style: italic;">none</span> more than all others.`;
+
+    for(let i = 0; i < abcs.length; i++){
+        if (abcs[i] === "a"){
+            alphas ++;
+        } else if (abcs[i] === "b"){
+            betas ++;
+        } else if (abcs[i] === "c"){
+            charlies ++;
+        }
+    }
+    if(alphas > betas){
+        most = ` <span style="font-style: italic;">A</span>s`;
+    }
+    if (betas > alphas){
+        most = ` <span style="font-style: italic;">B</span>s`;
+    }
+    if (charlies > alphas || charlies > betas){
+        most = ` <span style="font-style: italic;">C</span>s`;
+    }
+    console.log(most);
+    return most;
 }
 
 
