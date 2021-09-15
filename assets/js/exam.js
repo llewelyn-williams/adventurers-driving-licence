@@ -1,5 +1,5 @@
 //Question Data
-let exam = {
+const exam = {
     "question1": {
       "questionText": "Question 1",
       "answers": {
