@@ -35,8 +35,8 @@ function moveCard(){
 
 // Progressing Questions
 
-const answers = []
-let selectedAnswer = 0
+const answers = [];
+let selectedAnswer = 0;
 
 // Vaiable to track which question we are on.
 let currentQuestion = 1;
@@ -56,9 +56,10 @@ card3.addEventListener("click", acceptAnswer);
 function acceptAnswer(e){
 
     let theQuestion = "question" + currentQuestion;
-
+    let answerStat = "";
+    const preNumberNamePart = "card";
     // Append stat to aswers array
-    selectedAnswer = Number(this.id.slice("card".length, this.id.length));
+    selectedAnswer = Number(this.id.slice(preNumberNamePart.length, this.id.length));
     answerStat = exam[theQuestion].answers["answer"+selectedAnswer].answerStat;
     answers.push(answerStat);
     console.log(answers);
@@ -68,7 +69,7 @@ function acceptAnswer(e){
     // Hint found on StackOverflow:
     // https://stackoverflow.com/questions/5223/length-of-a-javascript-object
     if(currentQuestion < Object.keys(exam).length){
-        currentQuestion ++;
+        currentQuestion += 1;
         console.log(currentQuestion);
         theQuestion = "question" + currentQuestion;
         questionCard.innerHTML = exam[theQuestion].questionText;
@@ -84,24 +85,25 @@ function acceptAnswer(e){
         document.getElementById("result-display-text").innerHTML += calculateMostOf(answers);
     }
 
-    
 }
 
 function calculateMostOf(abcs){
- let alphas = 0;
- let betas = 0;
- let charlies = 0;
- let most = ` <span style="font-style: italic;">none</span> more than all others.`;
+    let alphas = 0;
+    let betas = 0;
+    let charlies = 0;
+    let most = ` <span style="font-style: italic;">none</span> more than all others.`;
+    let i = 0;
 
-    for(let i = 0; i < abcs.length; i++){
+    for(i = 0; i < abcs.length; i+= 1){
         if (abcs[i] === "a"){
-            alphas ++;
+            alphas += 1;
         } else if (abcs[i] === "b"){
-            betas ++;
+            betas += 1;
         } else if (abcs[i] === "c"){
-            charlies ++;
+            charlies += 1;
         }
     }
+
     if(alphas > betas && alphas > charlies){
         most = ` <span style="font-style: italic;">A</span>s`;
     } else if (betas > alphas && betas > charlies){
@@ -117,6 +119,7 @@ function calculateMostOf(abcs){
     } else if (alphas === betas && alphas === charlies){
         most = ` <span style="font-style: italic;">A & b & C</span>s`;
     }
+
     return most;
 }
 
