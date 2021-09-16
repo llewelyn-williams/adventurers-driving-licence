@@ -32,9 +32,17 @@ function moveCard(){
     }
 }
 
+//Licences Set
+let licencesSaved = [];
+
+//load any licences
+if (JSON.parse(localStorage.getItem("licences"))) {
+    const licencesFromStorage = JSON.parse(localStorage.getItem("licences"));
+    licencesSaved = licencesFromStorage;
+}
+
 
 // Progressing Questions
-
 const answers = [];
 let selectedAnswer = 0;
 
@@ -46,6 +54,11 @@ questionCard.innerHTML = exam.question1.questionText;
 card1.innerHTML = exam.question1.answers.answer1.answerText;
 card2.innerHTML = exam.question1.answers.answer2.answerText;
 card3.innerHTML = exam.question1.answers.answer3.answerText;
+
+//Add event listener on back button to reset questions
+const footerBackButton = document.getElementById("footer-return");
+footerBackButton.addEventListener("click", initaliseQuestions);
+
 
 // Add event listeners for accepting answers
 card1.addEventListener("click", acceptAnswer);
@@ -81,7 +94,7 @@ function acceptAnswer(e){
         console.log("END!");
         console.log(answers);
         changePage("licence");
-        console.log(calculateMostOf(answers));
+        //console.log(calculateMostOf(answers));
         document.getElementById("result-display-text").innerHTML += calculateMostOf(answers);
     }
 
@@ -93,6 +106,7 @@ function calculateMostOf(abcs){
     let charlies = 0;
     let most = ` <span style="font-style: italic;">none</span> more than all others.`;
     let i = 0;
+    let licence = "";
 
     for(i = 0; i < abcs.length; i+= 1){
         if (abcs[i] === "a"){
@@ -106,23 +120,73 @@ function calculateMostOf(abcs){
 
     if(alphas > betas && alphas > charlies){
         most = ` <span style="font-style: italic;">A</span>s`;
+        licence = "A";
     } else if (betas > alphas && betas > charlies){
         most = ` <span style="font-style: italic;">B</span>s`;
+        licence = "B";
     } else if (charlies > alphas && charlies > betas){
         most = ` <span style="font-style: italic;">C</span>s`;
+        licence = "C";
     } else if (alphas === betas && alphas > charlies){
         most = ` <span style="font-style: italic;">A & B</span>s`;
+        licence = "AB";
     } else if (betas === charlies && betas > alphas){
         most = ` <span style="font-style: italic;">B & C</span>s`;
+        licence = "BC";
     } else if (charlies === alphas && charlies > betas){
         most = ` <span style="font-style: italic;">A & C</span>s`;
+        licence = "AC";
     } else if (alphas === betas && alphas === charlies){
         most = ` <span style="font-style: italic;">A & b & C</span>s`;
+        licence = "ABC";
     }
 
+    //Add the achieved licnce to the set of licences
+    //TO DO - CHECK AND PREVENT DUPLICTES
+    licencesSaved.push(licence);
+    console.log("licencesSaved is " + licencesSaved);
+    https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage
+    localStorage.setItem("licences", JSON.stringify(licencesSaved));
+    
+    displayLicences(JSON.parse(localStorage.getItem("licences")));
+    
+
     return most;
+    
 }
 
+function displayLicences(achievedLicences){
+    const licenceDisplay = document.createElement("div");
+    licenceDisplay.innerHTML = achievedLicences;
+    if(document.getElementsByTagName("footer")[0].children.length <= 1){
+    document.getElementsByTagName("footer")[0].append(licenceDisplay);
+    } else {
+        //something else
+        console.log("trying to replace");
+        document.getElementsByTagName("footer")[0].children[1].innerHTML = licenceDisplay.innerHTML;
+    }
+}
+
+function clearSave(){
+    licencesSaved.length = 0;
+    localStorage.removeItem("licences")
+}
+
+function initaliseQuestions(){
+
+    console.log("initalisation of questions...")
+    //https://medium.com/@lauenroth/how-to-empty-a-const-array-365a81916e10
+    answers.length = 0;
+    selectedAnswer = 0;
+    currentQuestion = 1;
+
+    questionCard.innerHTML = exam.question1.questionText;
+    card1.innerHTML = exam.question1.answers.answer1.answerText;
+    card2.innerHTML = exam.question1.answers.answer2.answerText;
+    card3.innerHTML = exam.question1.answers.answer3.answerText;
+
+    licence = "";
+}
 
 // Page Display
 
