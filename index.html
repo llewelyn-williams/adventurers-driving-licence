@@ -7,55 +7,65 @@
     <link rel="stylesheet" href="assets/css/styles.css" type="text/css">
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
     <title>Adventurers Driving Licence</title>
 </head>
 <body>
-    <header>Header Content</header>
+    <div class="wrapper">
 
-    <section class="landing">
-        <div><h1>Game Title</h1></div>
-        <button id="start" onclick="changePage('question');">Start</button>
-        <button id="options" onclick="changePage('options');">Options</button>
-        <button id="credits" onclick="changePage('credits');">Credits</button>
-    </section>
+        <section class="landing">
+            <div class="main-title"><h1>Adventurers Driving Licence</h1></div>
+            <div class="game-description">
+                <h4>Take the test, see what kind of adventuring you might be qualified to undertake.</h4>
+                <p>Your instructor will present you with adventuring scenarios, you just need to make your choice.</p>
+            </div>
+            <div class="landing-buttons">
+                <button id="start" onclick="changePage('question');">Start</button>
+                <button id="options" onclick="changePage('options');">Options</button>
+                <button id="credits" onclick="changePage('credits');">Credits</button>
+            </div>
+        </section>
 
-    <section class="options">
-        <div></h1>Options</h1></div>
-        <input type="checkbox" id="music" name="music" checked>
-        <label for="music">Music</label>
-        <input type="checkbox" id="sounds" name="saounds" checked>
-        <label for="sounds">Sounds</label>
-        <button id="options-return" onclick="changePage('landing');">Back</button>
-    </section>
+        <section class="options">
+            <div></h1>Options</h1></div>
+            <input type="checkbox" id="music" name="music" checked>
+            <label for="music">Music</label>
+            <input type="checkbox" id="sounds" name="saounds" checked>
+            <label for="sounds">Sounds</label>
+            <button id="options-return" onclick="changePage('landing');">Back</button>
+        </section>
 
-    <section class="credits">
-        <div></h1>Credits</h1></div>
-        <p>Attribution 1</p>
-        <p>Attribution 2</p>
-        <p>Attribution 3</p>
-        <p>Attribution 4</p>
-        <button id="credits-return" onclick="changePage('landing');">Back</button>
-    </section>
+        <section class="credits">
+            <div></h1>Credits</h1></div>
+            <p>Attribution 1</p>
+            <p>Attribution 2</p>
+            <p>Attribution 3</p>
+            <p>Attribution 4</p>
+            <button id="credits-return" onclick="changePage('landing');">Back</button>
+        </section>
 
-    <section class="dialogue">
+        <section class="dialogue">
 
-    </section>
+        </section>
 
-    <section class="question">
-        <div id="question-display"></div>
-        <div id="card1">Card 1</div>
-        <div id="card2">Card 2</div>
-        <div id="card3">Card 3</div>
-    </section>
+        <section class="question">
+            <div id="question-display"></div>
+            <div id="card1">Card 1</div>
+            <div id="card2">Card 2</div>
+            <div id="card3">Card 3</div>
+        </section>
 
-    <section class="licence">
-        <div><h1>Licence</h1></div>
-        <p id="result-display-text">You chose mostly</p>
-    </section>
-    
-    <footer>Footer Content
-        <button id="footer-return" onclick="changePage('landing');">Back</button>
-    </footer>
+        <section class="licence">
+            <div><h1>Licence</h1></div>
+            <p id="result-display-text">You chose mostly</p>
+        </section>
+        
+        <footer>Footer Content
+            <button id="footer-return" onclick="changePage('landing');">Back</button>
+        </footer>
+    </div>
     <script src="assets/js/exam.js"></script>
     <script src="assets/js/script.js"></script>
 </body>

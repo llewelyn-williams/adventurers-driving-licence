@@ -135,6 +135,10 @@ let page = "landing";
  * @param {string} newpage The class name of the section to be shown
  */
 function changePage(newpage) {
+
+    // Change the page variable
+    page = newpage;
+
     // Get all the sections (differnt "pages").
     /*
        Specifically using querySelectorAll instead of
@@ -155,8 +159,15 @@ function changePage(newpage) {
         section.style.display = "none";
         // But then if the section is the one you want...
         if (section === activeSection[0]){
-            // Change just its display back to block.
-            section.style.display = "block";
+            console.log(page);
+            // Change just its display back to block or flex
+            if (page === "landing" || page === "licence"){
+                section.style.display = "flex";
+            } else if (page === "question"){
+                section.style.display = "block"; 
+            } else {
+                section.style.display = "flex";
+            }
         }
     }
 }
