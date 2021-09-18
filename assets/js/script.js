@@ -60,35 +60,105 @@ const footerBackButton = document.getElementById("footer-return");
 footerBackButton.addEventListener("click", initaliseQuestions);
 
 
-// Add event listeners for accepting answers
-//card1.addEventListener("click", acceptAnswer);
-//card2.addEventListener("click", acceptAnswer);
-//card3.addEventListener("click", acceptAnswer);
+// Add event listentings for enlarging cards
 card1.addEventListener("click", enlargeCard);
 card2.addEventListener("click", enlargeCard);
 card3.addEventListener("click", enlargeCard);
 
+let enlarged = false;
+
 // Animate Clicked Card
 function enlargeCard(e){
-    console.log("this is : " + this);
-    if(this.id === "card1"){
-        console.log("this is : " + this.id);
-        $(this).animate({maxWidth:"500px", width: "80%", height:"100px", paddingTop: "100px", paddingBottom: "100px", paddingLeft:"1rem", paddingRight: "1rem"}, 800, function(){});
-        $(this.nextElementSibling).animate({height: 0, opacity: 0, marginTop: 0, marginBottom: 0}, 800, function(){});
-        $(this.nextElementSibling.nextElementSibling).animate({height: 0, opacity: 0,  marginTop: 0, marginBottom: 0}, 800, function(){});
-    } else if (this.id === "card2"){
-        console.log("this is : " + this.id);
-        $(this).animate({maxWidth:"500px", width: "80%", height:"300px"}, 800, function(){});
-        $(this.nextElementSibling).animate({height: 0, opacity: 0, marginTop: 0, marginBottom: 0}, 800, function(){});
-        $(this.previousElementSibling).animate({height: 0, opacity: 0,  marginTop: 0, marginBottom: 0}, 800, function(){});
-    } else if (this.id === "card3"){
-        console.log("this is : " + this.id);
-        $(this).animate({maxWidth:"500px", width: "80%", height:"300px"}, 800, function(){});
-        $(this.previousElementSibling).animate({height: 0, opacity: 0, marginTop: 0, marginBottom: 0}, 800, function(){});
-        $(this.previousElementSibling.previousElementSibling).animate({height: 0, opacity: 0,  marginTop: 0, marginBottom: 0}, 800, function(){});
+    if (!enlarged){
+        console.log("this is : " + this);
+        if(this.id === "card1"){
+            console.log("this is : " + this.id);
+            $(this).animate({maxWidth:"500px", width: "80%", height:"100px", paddingTop: "100px", paddingBottom: "100px", paddingLeft:"1rem", paddingRight: "1rem"}, 800, function(){});
+            $(this.nextElementSibling).animate({height: 0, opacity: 0, marginTop: 0, marginBottom: 0}, 800, function(){});
+            $(this.nextElementSibling.nextElementSibling).animate({height: 0, opacity: 0,  marginTop: 0, marginBottom: 0}, 800, function(){});
+            englarged = true;
+            //Remove englargement event listener
+            card1.removeEventListener("click", enlargeCard);
+            // Add event listener for accepting answers
+            card1.addEventListener("click", acceptAnswer);
+        } else if (this.id === "card2"){
+            console.log("this is : " + this.id);
+            $(this).animate({maxWidth:"500px", width: "80%", height:"300px"}, 800, function(){});
+            $(this.nextElementSibling).animate({height: 0, opacity: 0, marginTop: 0, marginBottom: 0}, 800, function(){});
+            $(this.previousElementSibling).animate({height: 0, opacity: 0,  marginTop: 0, marginBottom: 0}, 800, function(){});
+            englarged = true;
+            //Remove englargement event listener
+            card2.removeEventListener("click", enlargeCard);
+            // Add event listener for accepting answer
+            card2.addEventListener("click", acceptAnswer);
+        } else if (this.id === "card3"){
+            console.log("this is : " + this.id);
+            $(this).animate({maxWidth:"500px", width: "80%", height:"300px"}, 800, function(){});
+            $(this.previousElementSibling).animate({height: 0, opacity: 0, marginTop: 0, marginBottom: 0}, 800, function(){});
+            $(this.previousElementSibling.previousElementSibling).animate({height: 0, opacity: 0,  marginTop: 0, marginBottom: 0}, 800, function(){});
+            englarged = true;
+            //Remove englargement event listener
+            card3.removeEventListener("click", enlargeCard);
+            // Add event listener for accepting answer
+            card3.addEventListener("click", acceptAnswer);
+        }
     }
 }
 
+function resetCardStyles(){
+    if (englarged){
+        // let i = 1;
+        // for (i; i < 4; i += 1){
+
+        // }
+        //$("#card1").finish()
+
+        console.log("Hellow from resert styles")
+        card1.style.height = "10px"
+        card1.style.width = "170px";
+        card1.style.maxWidth = "";
+        card1.style.height = "60px";
+        card1.style.marginTop = "50px";
+        card1.style.marginBottom = "50px";
+        card1.style.opacity = "100%";
+        card1.style.paddingBottom = "";
+        card1.style.paddingTop = "";
+        card1.style.paddingLeft = "";
+        card1.style.paddingRight = "";
+        card1.removeEventListener("click", acceptAnswer);
+        card1.addEventListener("click", enlargeCard);
+
+        card2.style.height = "10px"
+        card2.style.width = "170px";
+        card2.style.maxWidth = "";
+        card2.style.height = "60px";
+        card2.style.marginTop = "50px";
+        card2.style.marginBottom = "50px";
+        card2.style.opacity = "100%";
+        card2.style.paddingBottom = "";
+        card2.style.paddingTop = "";
+        card2.style.paddingLeft = "";
+        card2.style.paddingRight = "";
+        card2.removeEventListener("click", acceptAnswer);
+        card2.addEventListener("click", enlargeCard);
+
+        card3.style.height = "10px"
+        card3.style.width = "170px";
+        card3.style.maxWidth = "";
+        card3.style.height = "60px";
+        card3.style.marginTop = "50px";
+        card3.style.marginBottom = "50px";
+        card3.style.opacity = "100%";
+        card3.style.paddingBottom = "";
+        card3.style.paddingTop = "";
+        card3.style.paddingLeft = "";
+        card3.style.paddingRight = "";
+        card3.removeEventListener("click", acceptAnswer);
+        card3.addEventListener("click", enlargeCard);
+
+        enlarged = false;
+    }
+}
 
 // Advance the tracker and change the values of the cards.
 function acceptAnswer(e){
@@ -122,6 +192,8 @@ function acceptAnswer(e){
         //console.log(calculateMostOf(answers));
         document.getElementById("result-display-text").innerHTML = "You chose mostly" + calculateMostOf(answers);
     }
+
+    resetCardStyles();
 
 }
 
