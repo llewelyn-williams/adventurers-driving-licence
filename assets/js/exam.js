@@ -1,7 +1,7 @@
 // Question Data
 const exam = {
     "question1": {
-      "questionText": "You find yourself captive in a dungeon for no good reason, you’re there, okay? Accept it. How do you escape?",
+      "questionText": `You find yourself captive in a dungeon for no good reason, you’re there, okay? Accept it. <br>How do you escape?`,
       "answers": {
         "answer1": {
           "answerText": "I fashion a lockpick from convenient debris, pick the lock and escape into the shadows.",
@@ -21,7 +21,7 @@ const exam = {
       }
     },
     "question2": {
-      "questionText": "After months of gruelling transcontinental warfare against a dark and powerful army, you finally find yourself at the summit of Mount Skullfire to face off against the all powerful, villainous dragonlord Greg. How do you proceed?",
+      "questionText": `After months of gruelling transcontinental warfare against a dark and powerful army, you finally find yourself at the summit of Mount Skullfire to face off against the all powerful, villainous dragonlord Greg. <br>How do you proceed?`,
       "answers": {
         "answer1": {
           "answerText": "I deftly make my way to Greg’s sleeping chambers and take his life while he sleeps with a precise slice of my dagger. Then make off with all his gold.",
@@ -41,7 +41,7 @@ const exam = {
       }
     },
     "question3": {
-      "questionText": "You are sat at the bar in the local tavern. The barkeeper passes you the beer you've ordered. What do you do?",
+      "questionText": `You are sat at the bar in the local tavern. The barkeeper passes you the beer you've ordered. <br>What do you do?`,
       "answers": {
         "answer1": {
           "answerText": `I place a bucket on the bar keeper’s head to obscure his vision and help myself to a bottle of their finest whiskey. <em>Then</em> I drink my beer.`,
@@ -61,7 +61,7 @@ const exam = {
       }
     },
     "question4": {
-      "questionText": "As you pass a traveller on the road they call to you asking for help. How will you be of assistance?",
+      "questionText": `As you pass a traveller on the road they call to you asking for help. <br>How will you be of assistance?`,
       "answers": {
         "answer1": {
           "answerText": "Q4 Answer One",
