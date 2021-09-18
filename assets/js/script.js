@@ -61,9 +61,34 @@ footerBackButton.addEventListener("click", initaliseQuestions);
 
 
 // Add event listeners for accepting answers
-card1.addEventListener("click", acceptAnswer);
-card2.addEventListener("click", acceptAnswer);
-card3.addEventListener("click", acceptAnswer);
+//card1.addEventListener("click", acceptAnswer);
+//card2.addEventListener("click", acceptAnswer);
+//card3.addEventListener("click", acceptAnswer);
+card1.addEventListener("click", enlargeCard);
+card2.addEventListener("click", enlargeCard);
+card3.addEventListener("click", enlargeCard);
+
+// Animate Clicked Card
+function enlargeCard(e){
+    console.log("this is : " + this);
+    if(this.id === "card1"){
+        console.log("this is : " + this.id);
+        $(this).animate({maxWidth:"500px", width: "80%", height:"100px", paddingTop: "100px", paddingBottom: "100px", paddingLeft:"1rem", paddingRight: "1rem"}, 800, function(){});
+        $(this.nextElementSibling).animate({height: 0, opacity: 0, marginTop: 0, marginBottom: 0}, 800, function(){});
+        $(this.nextElementSibling.nextElementSibling).animate({height: 0, opacity: 0,  marginTop: 0, marginBottom: 0}, 800, function(){});
+    } else if (this.id === "card2"){
+        console.log("this is : " + this.id);
+        $(this).animate({maxWidth:"500px", width: "80%", height:"300px"}, 800, function(){});
+        $(this.nextElementSibling).animate({height: 0, opacity: 0, marginTop: 0, marginBottom: 0}, 800, function(){});
+        $(this.previousElementSibling).animate({height: 0, opacity: 0,  marginTop: 0, marginBottom: 0}, 800, function(){});
+    } else if (this.id === "card3"){
+        console.log("this is : " + this.id);
+        $(this).animate({maxWidth:"500px", width: "80%", height:"300px"}, 800, function(){});
+        $(this.previousElementSibling).animate({height: 0, opacity: 0, marginTop: 0, marginBottom: 0}, 800, function(){});
+        $(this.previousElementSibling.previousElementSibling).animate({height: 0, opacity: 0,  marginTop: 0, marginBottom: 0}, 800, function(){});
+    }
+}
+
 
 // Advance the tracker and change the values of the cards.
 function acceptAnswer(e){

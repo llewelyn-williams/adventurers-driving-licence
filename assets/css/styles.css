@@ -23,9 +23,11 @@ body {
     background-color: blanchedalmond;
     border: 1px solid black;
     text-align: center;
-    line-height: 60px;
     text-overflow: clip;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .landing {
