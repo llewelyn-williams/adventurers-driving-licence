@@ -95,50 +95,50 @@ function acceptAnswer(e){
         console.log(answers);
         changePage("licence");
         //console.log(calculateMostOf(answers));
-        document.getElementById("result-display-text").innerHTML += calculateMostOf(answers);
+        document.getElementById("result-display-text").innerHTML = "You chose mostly" + calculateMostOf(answers);
     }
 
 }
 
 function calculateMostOf(abcs){
-    let alphas = 0;
-    let betas = 0;
-    let charlies = 0;
+    let thiefs = 0;
+    let fighters = 0;
+    let mages = 0;
     let most = ` <span style="font-style: italic;">none</span> more than all others.`;
     let i = 0;
     let licence = "";
 
     for(i = 0; i < abcs.length; i+= 1){
-        if (abcs[i] === "a"){
-            alphas += 1;
-        } else if (abcs[i] === "b"){
-            betas += 1;
-        } else if (abcs[i] === "c"){
-            charlies += 1;
+        if (abcs[i] === "thief"){
+            thiefs += 1;
+        } else if (abcs[i] === "fighter"){
+            fighters += 1;
+        } else if (abcs[i] === "mage"){
+            mages += 1;
         }
     }
 
-    if(alphas > betas && alphas > charlies){
-        most = ` <span style="font-style: italic;">A</span>s`;
-        licence = "A";
-    } else if (betas > alphas && betas > charlies){
-        most = ` <span style="font-style: italic;">B</span>s`;
-        licence = "B";
-    } else if (charlies > alphas && charlies > betas){
-        most = ` <span style="font-style: italic;">C</span>s`;
-        licence = "C";
-    } else if (alphas === betas && alphas > charlies){
-        most = ` <span style="font-style: italic;">A & B</span>s`;
-        licence = "AB";
-    } else if (betas === charlies && betas > alphas){
-        most = ` <span style="font-style: italic;">B & C</span>s`;
-        licence = "BC";
-    } else if (charlies === alphas && charlies > betas){
-        most = ` <span style="font-style: italic;">A & C</span>s`;
-        licence = "AC";
-    } else if (alphas === betas && alphas === charlies){
-        most = ` <span style="font-style: italic;">A & b & C</span>s`;
-        licence = "ABC";
+    if(thiefs > fighters && thiefs > mages){
+        most = ` <span style="font-style: italic;">Thief</span>s`;
+        licence = "Thief";
+    } else if (fighters > thiefs && fighters > mages){
+        most = ` <span style="font-style: italic;">Fighter</span>s`;
+        licence = "Fighter";
+    } else if (mages > thiefs && mages > fighters){
+        most = ` <span style="font-style: italic;">Mage</span>s`;
+        licence = "Mage";
+    } else if (thiefs === fighters && thiefs > mages){
+        most = ` <span style="font-style: italic;">Thief & Fighter</span>s`;
+        licence = "Thiefter";
+    } else if (fighters === mages && fighters > thiefs){
+        most = ` <span style="font-style: italic;">Fighter & Mage</span>s`;
+        licence = "Maigter";
+    } else if (mages === thiefs && mages > fighters){
+        most = ` <span style="font-style: italic;">Thief & Mage</span>s`;
+        licence = "Mief";
+    } else if (thiefs === fighters && thiefs === mages){
+        most = ` <span style="font-style: italic;">Thief & Fighter & Mage</span>s`;
+        licence = "Magical Invisible Fist";
     }
 
     //Add the achieved licnce to the set of licences
@@ -169,7 +169,13 @@ function displayLicences(achievedLicences){
 
 function clearSave(){
     licencesSaved.length = 0;
-    localStorage.removeItem("licences")
+    localStorage.removeItem("licences");
+    if (JSON.parse(localStorage.getItem("licences")) === null){
+        displayLicences("");
+    } else {
+        displayLicences(JSON.parse(localStorage.getItem("licences")));
+    }
+    
 }
 
 function initaliseQuestions(){
@@ -237,3 +243,4 @@ function changePage(newpage) {
 }
 
 changePage(page);
+displayLicences(JSON.parse(localStorage.getItem("licences")));
