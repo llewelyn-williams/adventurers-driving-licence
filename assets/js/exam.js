@@ -103,7 +103,7 @@ const exam = {
         },
         "answer2": {
           "answerText": "I punch it.",
-          "answerTextShort": "Puch It",
+          "answerTextShort": "Punch It",
           "answerStat": "fighter",
           "answerResponse": "Yep. You're definitely a fighter."
         },
