@@ -51,9 +51,9 @@ let currentQuestion = 1;
 
 // Set the initial innerHTML of the page elements
 questionCard.innerHTML = exam.question1.questionText;
-card1.innerHTML = exam.question1.answers.answer1.answerText;
-card2.innerHTML = exam.question1.answers.answer2.answerText;
-card3.innerHTML = exam.question1.answers.answer3.answerText;
+card1.innerHTML = exam.question1.answers.answer1.answerTextShort;
+card2.innerHTML = exam.question1.answers.answer2.answerTextShort;
+card3.innerHTML = exam.question1.answers.answer3.answerTextShort;
 
 //Add event listener on back button to reset questions
 const footerBackButton = document.getElementById("footer-return");
@@ -102,6 +102,11 @@ function enlargeCard(e){
             // Add event listener for accepting answer
             card3.addEventListener("click", acceptAnswer);
         }
+
+        // Change the Card text to the full text
+        let theQuestion = "question" + currentQuestion;
+        const preNumberNamePart = "card";
+        this.innerHTML = exam[theQuestion].answers["answer"+Number(this.id.slice(preNumberNamePart.length, this.id.length))].answerText;
     }
 }
 
@@ -181,9 +186,9 @@ function acceptAnswer(e){
         console.log(currentQuestion);
         theQuestion = "question" + currentQuestion;
         questionCard.innerHTML = exam[theQuestion].questionText;
-        card1.innerHTML = exam[theQuestion].answers.answer1.answerText;
-        card2.innerHTML = exam[theQuestion].answers.answer2.answerText;
-        card3.innerHTML = exam[theQuestion].answers.answer3.answerText;
+        card1.innerHTML = exam[theQuestion].answers.answer1.answerTextShort;
+        card2.innerHTML = exam[theQuestion].answers.answer2.answerTextShort;
+        card3.innerHTML = exam[theQuestion].answers.answer3.answerTextShort;
     } else {
         // Last answer given. End.
         console.log("END!");
@@ -284,9 +289,9 @@ function initaliseQuestions(){
     currentQuestion = 1;
 
     questionCard.innerHTML = exam.question1.questionText;
-    card1.innerHTML = exam.question1.answers.answer1.answerText;
-    card2.innerHTML = exam.question1.answers.answer2.answerText;
-    card3.innerHTML = exam.question1.answers.answer3.answerText;
+    card1.innerHTML = exam.question1.answers.answer1.answerTextShort;
+    card2.innerHTML = exam.question1.answers.answer2.answerTextShort;
+    card3.innerHTML = exam.question1.answers.answer3.answerTextShort;
 
     licence = "";
 }

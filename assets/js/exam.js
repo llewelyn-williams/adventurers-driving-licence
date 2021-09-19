@@ -5,16 +5,19 @@ const exam = {
       "answers": {
         "answer1": {
           "answerText": "I fashion a lockpick from convenient debris, pick the lock and escape into the shadows.",
+          "answerTextShort": "Fashion Lockpick",
           "answerStat": "thief",
           "answerResponse": `How very convenient, the dungeon does have a <em>lot</em> of shadows.`
         },
         "answer2": {
           "answerText": "I punch it.",
+          "answerTextShort": "Punch It",
           "answerStat": "fighter",
           "answerResponse": "Wha… What are you punching exactly? *sigh* Nevermind. It doesn't matter."
         },
         "answer3": {
           "answerText": "I stun the guard with magical sparkles and levitate the key from their pocket while they’re distracted.",
+          "answerTextShort": "Magical Sparkles",
           "answerStat": "mage",
           "answerResponse": "You call that magic? Throwing glitter in someone's face? *puffs dismissively*"
         }
@@ -25,16 +28,19 @@ const exam = {
       "answers": {
         "answer1": {
           "answerText": "I deftly make my way to Greg’s sleeping chambers and take his life while he sleeps with a precise slice of my dagger. Then make off with all his gold.",
+          "answerTextShort": "Stealth",
           "answerStat": "thief",
           "answerResponse": "Well, that got dark quickly."
         },
         "answer2": {
           "answerText": "I punch it.",
+          "answerTextShort": "Punch It",
           "answerStat": "fighter",
           "answerResponse": "The mountain? You punch… the mountain?"
         },
         "answer3": {
           "answerText": "I cast an epic spell.",
+          "answerTextShort": "Cast Spell",
           "answerStat": "mage",
           "answerResponse": "Epic!"
         }
@@ -45,16 +51,19 @@ const exam = {
       "answers": {
         "answer1": {
           "answerText": `I place a bucket on the bar keeper’s head to obscure his vision and help myself to a bottle of their finest whiskey. <em>Then</em> I drink my beer.`,
+          "answerTextShort": "Use Bucket",
           "answerStat": "thief",
           "answerResponse": "I can't believe any situation, fictional or otherwise, where that’d actually work."
         },
         "answer2": {
           "answerText": "I punch it.",
+          "answerTextShort": "Punch It",
           "answerStat": "fighter",
           "answerResponse": "It's customary to drink it, but, okay."
         },
         "answer3": {
           "answerText": 'I call out to the bar "This round’s on me!" and cast a duplication spell on my beer.',
+          "answerTextShort": `"This round's on me!"`,
           "answerStat": "mage",
           "answerResponse": "I can tell you with the benefit of hindsight, such behaviour is liable to get you barred from a tavern."
         }
@@ -65,16 +74,19 @@ const exam = {
       "answers": {
         "answer1": {
           "answerText": "Q4 Answer One",
+          "answerTextShort": "Q4 A1",
           "answerStat": "thief",
           "answerResponse": "Q4 A1 Response"
         },
         "answer2": {
           "answerText": "I punch it.",
+          "answerTextShort": "Punch It",
           "answerStat": "fighter",
           "answerResponse": "Q4 A2 Response"
         },
         "answer3": {
           "answerText": "Q4 Answer Three",
+          "answerTextShort": "Q4 A3",
           "answerStat": "mage",
           "answerResponse": "Q4 A3 Response"
         }
@@ -85,16 +97,19 @@ const exam = {
       "answers": {
         "answer1": {
           "answerText": "Q5 Answer One",
+          "answerTextShort": "Q5 A1",
           "answerStat": "thief",
           "answerResponse": "Q5 A1 Response"
         },
         "answer2": {
           "answerText": "Q5 Answer Two",
+          "answerTextShort": "Q5 A2",
           "answerStat": "fighter",
           "answerResponse": "Q5 A2 Response"
         },
         "answer3": {
           "answerText": "Q5 Answer Three",
+          "answerTextShort": "Q5 A3",
           "answerStat": "mage",
           "answerResponse": "Q5 A3 Response"
         }
