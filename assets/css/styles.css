@@ -118,6 +118,7 @@ body {
 
     .landing-buttons {
         flex-direction: row;
+    }
 }
 
 #start{
