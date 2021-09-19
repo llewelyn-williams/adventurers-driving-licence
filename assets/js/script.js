@@ -70,6 +70,13 @@ let enlarged = false;
 // Animate Clicked Card
 function enlargeCard(e){
     if (!enlarged){
+
+        // Tip for handling audio from StackOverflow
+        // https://stackoverflow.com/questions/9419263/how-to-play-audio
+
+        const audio = new Audio("assets/sound/card-enlarge.wav");
+        audio.play();
+
         console.log("this is : " + this);
         if(this.id === "card1"){
             this.style.cursor = "unset";
@@ -182,6 +189,9 @@ function resetCardStyles(){
 
 // Advance the tracker and change the values of the cards.
 function acceptAnswer(e){
+
+    const audio = new Audio("assets/sound/turn-page.wav");
+    audio.play();
 
     let theQuestion = "question" + currentQuestion;
     let answerStat = "";
@@ -363,7 +373,10 @@ function changePage(newpage) {
             if (page === "landing" || page === "licence"){
                 section.style.display = "flex";
             } else if (page === "question"){
-                section.style.display = "block"; 
+                section.style.display = "block";
+                //Play start sound
+                const audio = new Audio("assets/sound/start.wav");
+                audio.play();
             } else {
                 section.style.display = "flex";
             }

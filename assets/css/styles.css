@@ -5,7 +5,10 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: #ec973e;
+    background-color: slategray;
+    background-image: url("../images/brown_ice_by_darkwood67.jpg");
+    background-size:cover;
+
 }
 
 #question-display {
@@ -62,10 +65,13 @@ body {
 }
 
 .main-title {
-    padding: 0 30px;
+    padding: 0px 10px 0px 10px;
     width: 15rem;
+    text-align: center;
 
 }
+
+
 
 .main-title > h1 {
     font-size: 2.5rem;
@@ -73,9 +79,16 @@ body {
     margin: 0;
 }
 
+@media screen and (max-width: 600px) {
+    .main-title > h1{
+        font-size: 2rem;
+    }
+}
+
 .game-description{
-    padding: 30px;
+    padding: 0 30px;
     width: 15rem;
+    text-align: center;
 }
 
 .landing-buttons{
@@ -130,23 +143,22 @@ header {
 }
 
 section {
-    background-color: #F6E6BD;
     margin: auto 0;
 }
 
 footer {
-    background-color: #f6e6bd;
     margin: 0;
     height: 15%;
 }
 
 .wrapper {
-    height: 100vh;
+    height: calc(100vh - 30px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 0;
     margin: 0;
+    padding-top: 30px;
 }
 
 /* The Licences */
