@@ -50,7 +50,7 @@ const exam = {
       "questionText": `You are sat at the bar in the local tavern. The barkeeper passes you the beer you've ordered. <br>What do you do?`,
       "answers": {
         "answer1": {
-          "answerText": `I place a bucket on the bar keeper’s head to obscure his vision and help myself to a bottle of their finest whiskey. <em>Then</em> I drink my beer.`,
+          "answerText": `I place a bucket on the bar keeper’s head to obscure his vision and help myself to a bottle of their finest whiskey. Then I drink my beer.`,
           "answerTextShort": "Use Bucket",
           "answerStat": "thief",
           "answerResponse": "I can't believe any situation, fictional or otherwise, where that’d actually work."
