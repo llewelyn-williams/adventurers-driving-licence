@@ -209,8 +209,11 @@ function acceptAnswer(e){
         console.log("END!");
         console.log(answers);
         changePage("licence");
-        //console.log(calculateMostOf(answers));
-        document.getElementById("result-display-text").innerHTML = "You chose mostly" + calculateMostOf(answers);
+
+        //Display Text and Licence Achieved
+        document.getElementById("result-display-text").innerHTML = "You chose mostly" + calculateMostOf(answers)[0];
+        const achievedLicence = document.getElementById(calculateMostOf(answers)[1].toLowerCase() + "-licence").cloneNode(true);
+        document.getElementById("result-display-text").append(achievedLicence);
     }
 
     resetCardStyles();
@@ -268,7 +271,7 @@ function calculateMostOf(abcs){
     // Display Licences
     displayLicences(JSON.parse(localStorage.getItem("licences")));
     
-    return most;
+    return [most, licence];
     
 }
 
