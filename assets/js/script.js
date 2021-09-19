@@ -249,7 +249,7 @@ function calculateMostOf(abcs){
         licence = "Thiefter";
     } else if (fighters === mages && fighters > thiefs){
         most = ` <span style="font-style: italic;">Fighter & Mage</span>s`;
-        licence = "Maigter";
+        licence = "Maighter";
     } else if (mages === thiefs && mages > fighters){
         most = ` <span style="font-style: italic;">Thief & Mage</span>s`;
         licence = "Mief";
