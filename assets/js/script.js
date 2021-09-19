@@ -120,7 +120,7 @@ function resetCardStyles(){
 
         console.log("Hellow from resert styles")
         card1.style.height = "10px"
-        card1.style.width = "170px";
+        card1.style.width = "190px";
         card1.style.maxWidth = "";
         card1.style.height = "60px";
         card1.style.marginTop = "50px";
@@ -134,7 +134,7 @@ function resetCardStyles(){
         card1.addEventListener("click", enlargeCard);
 
         card2.style.height = "10px"
-        card2.style.width = "170px";
+        card2.style.width = "190px";
         card2.style.maxWidth = "";
         card2.style.height = "60px";
         card2.style.marginTop = "50px";
@@ -148,7 +148,7 @@ function resetCardStyles(){
         card2.addEventListener("click", enlargeCard);
 
         card3.style.height = "10px"
-        card3.style.width = "170px";
+        card3.style.width = "190px";
         card3.style.maxWidth = "";
         card3.style.height = "60px";
         card3.style.marginTop = "50px";
@@ -250,23 +250,32 @@ function calculateMostOf(abcs){
     https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage
     localStorage.setItem("licences", JSON.stringify(licencesSaved));
     
+    // Display Licences
     displayLicences(JSON.parse(localStorage.getItem("licences")));
     
-
     return most;
     
 }
 
+const allLicences = ["Thief", "Fighter", "Mage", "Thiefter", "Mief", "Maighter"]
+
 function displayLicences(achievedLicences){
-    const licenceDisplay = document.createElement("div");
-    licenceDisplay.innerHTML = achievedLicences;
-    if(document.getElementsByTagName("footer")[0].children.length <= 1){
-    document.getElementsByTagName("footer")[0].append(licenceDisplay);
-    } else {
-        //something else
-        console.log("trying to replace");
-        document.getElementsByTagName("footer")[0].children[1].innerHTML = licenceDisplay.innerHTML;
-    }
+
+    // Run though each possible licnce type
+    allLicences.forEach(function(theLicence){
+        // Check that there are actually licences awarded to display
+        if (achievedLicences != null && achievedLicences.length > 0){
+            // If you find the one we're looking at this iteration...
+            if (achievedLicences.includes(theLicence)){
+            // Change the display to "flex" so that it displays
+            document.getElementById(theLicence.toLowerCase() +"-licence").style.display = "flex";
+            }
+        } else {
+            //Hide them all.
+            document.getElementById(theLicence.toLowerCase() +"-licence").style.display = "none";
+            twemoji.parse(document.getElementById(theLicence.toLowerCase() +"-licence"));
+        }
+    })
 }
 
 function clearSave(){
@@ -346,3 +355,5 @@ function changePage(newpage) {
 
 changePage(page);
 displayLicences(JSON.parse(localStorage.getItem("licences")));
+
+twemoji.parse(document.body);

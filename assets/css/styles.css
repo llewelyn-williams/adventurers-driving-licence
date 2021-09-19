@@ -50,7 +50,7 @@ body {
     align-items: center;
 }
 
-.credits {
+.licences {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -109,7 +109,7 @@ body {
     font-size: 1.1rem;
 }
 
-#credits{
+#licences{
     background-color: #905c20;
     color: cornsilk;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -146,4 +146,16 @@ footer {
     justify-content: space-between;
     padding: 0;
     margin: 0;
+}
+
+/* The Licences */
+
+.individual-licence{
+    display: none;
+
+    border: 1px solid black;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0.5rem 1rem;
 }

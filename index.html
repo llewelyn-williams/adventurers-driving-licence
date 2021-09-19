@@ -24,7 +24,7 @@
             <div class="landing-buttons">
                 <button id="start" onclick="changePage('question');">Start</button>
                 <button id="options" onclick="changePage('options');">Options</button>
-                <button id="credits" onclick="changePage('credits');">Credits</button>
+                <button id="licences" onclick="changePage('licences');">Licences</button>
             </div>
         </section>
 
@@ -38,13 +38,15 @@
             <button id="options-return" onclick="changePage('landing');">Back</button>
         </section>
 
-        <section class="credits">
-            <div></h1>Credits</h1></div>
-            <p>Attribution 1</p>
-            <p>Attribution 2</p>
-            <p>Attribution 3</p>
-            <p>Attribution 4</p>
-            <button id="credits-return" onclick="changePage('landing');">Back</button>
+        <section class="licences">
+            <div></h1>Licences</h1></div>
+            <p id="thief-licence" class="individual-licence">&#x1F575;&#xFE0F; Thief</p>
+            <p id="fighter-licence" class="individual-licence">&#x1F91C; Fighter</p>
+            <p id="mage-licence" class="individual-licence">&#x1F9D9;&#x200D;&#x2640;&#xFE0F; Mage</p>
+            <p id="thiefter-licence" class="individual-licence">&#x1F575;&#xFE0F; &#x1F91C; Thiefter</p>
+            <p id="mief-licence" class="individual-licence">&#x1F9D9;&#x200D;&#x2640;&#xFE0F; &#x1F575;&#xFE0F; Mief</p>
+            <p id="maigter-licence" class="individual-licence">&#x1F9D9;&#x200D;&#x2640;&#xFE0F; &#x1F91C; Maigter</p>
+            <button id="licences-return" onclick="changePage('landing');">Back</button>
         </section>
 
         <section class="dialogue">
@@ -67,6 +69,7 @@
             <button id="footer-return" onclick="changePage('landing');">Back</button>
         </footer>
     </div>
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
     <script src="assets/js/jquery-3.6.0.js"></script>
     <script src="assets/js/exam.js"></script>
     <script src="assets/js/script.js"></script>
