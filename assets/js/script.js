@@ -72,7 +72,7 @@ function enlargeCard(e){
     if (!enlarged){
         console.log("this is : " + this);
         if(this.id === "card1"){
-            console.log("this is : " + this.id);
+            this.style.cursor = "unset";
             $(this).animate({maxWidth:"500px", width: "80%", height:"100px", paddingTop: "100px", paddingBottom: "100px", paddingLeft:"1rem", paddingRight: "1rem"}, 800, function(){});
             $(this.nextElementSibling).animate({height: 0, opacity: 0, marginTop: 0, marginBottom: 0}, 800, function(){});
             $(this.nextElementSibling.nextElementSibling).animate({height: 0, opacity: 0,  marginTop: 0, marginBottom: 0}, 800, function(){});
@@ -80,8 +80,14 @@ function enlargeCard(e){
             //Remove englargement event listener
             card1.removeEventListener("click", enlargeCard);
             // Add event listener for accepting answers
-            card1.addEventListener("click", acceptAnswer);
+            // But only after the animation has finished.
+            setTimeout(function(){
+                card1.addEventListener("click", acceptAnswer);
+                card1.style.cursor = "pointer";
+            }, 800);
+            
         } else if (this.id === "card2"){
+            this.style.cursor = "unset";
             console.log("this is : " + this.id);
             $(this).animate({maxWidth:"500px", width: "80%", height:"300px"}, 800, function(){});
             $(this.nextElementSibling).animate({height: 0, opacity: 0, marginTop: 0, marginBottom: 0}, 800, function(){});
@@ -89,9 +95,14 @@ function enlargeCard(e){
             englarged = true;
             //Remove englargement event listener
             card2.removeEventListener("click", enlargeCard);
-            // Add event listener for accepting answer
-            card2.addEventListener("click", acceptAnswer);
+            // Add event listener for accepting answers
+            // But only after the animation has finished.
+            setTimeout(function(){
+                card2.addEventListener("click", acceptAnswer);
+                card2.style.cursor = "pointer";
+            }, 800);
         } else if (this.id === "card3"){
+            this.style.cursor = "unset";
             console.log("this is : " + this.id);
             $(this).animate({maxWidth:"500px", width: "80%", height:"300px"}, 800, function(){});
             $(this.previousElementSibling).animate({height: 0, opacity: 0, marginTop: 0, marginBottom: 0}, 800, function(){});
@@ -99,8 +110,12 @@ function enlargeCard(e){
             englarged = true;
             //Remove englargement event listener
             card3.removeEventListener("click", enlargeCard);
-            // Add event listener for accepting answer
-            card3.addEventListener("click", acceptAnswer);
+            // Add event listener for accepting answers
+            // But only after the animation has finished.
+            setTimeout(function(){
+                card3.addEventListener("click", acceptAnswer);
+                card3.style.cursor = "pointer";
+            }, 800);
         }
 
         // Change the Card text to the full text
