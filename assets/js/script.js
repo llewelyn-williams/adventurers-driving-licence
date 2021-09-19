@@ -77,10 +77,20 @@ function enlargeCard(e){
         const audio = new Audio("assets/sound/card-enlarge.wav");
         audio.play();
 
+        const animationSettings = {
+            maxWidth:"500px", 
+            width: "80%", 
+            height:"100px", 
+            paddingTop: "93px", 
+            paddingBottom: "93px", 
+            paddingLeft:"1rem", 
+            paddingRight: "1rem"
+        }
+
         console.log("this is : " + this);
         if(this.id === "card1"){
             this.style.cursor = "unset";
-            $(this).animate({maxWidth:"500px", width: "80%", height:"100px", paddingTop: "100px", paddingBottom: "100px", paddingLeft:"1rem", paddingRight: "1rem"}, 800, function(){});
+            $(this).animate(animationSettings, 800, function(){});
             $(this.nextElementSibling).animate({height: 0, opacity: 0, marginTop: 0, marginBottom: 0}, 800, function(){});
             $(this.nextElementSibling.nextElementSibling).animate({height: 0, opacity: 0,  marginTop: 0, marginBottom: 0}, 800, function(){});
             englarged = true;
@@ -96,7 +106,7 @@ function enlargeCard(e){
         } else if (this.id === "card2"){
             this.style.cursor = "unset";
             console.log("this is : " + this.id);
-            $(this).animate({maxWidth:"500px", width: "80%", height:"300px"}, 800, function(){});
+            $(this).animate(animationSettings, 800, function(){});
             $(this.nextElementSibling).animate({height: 0, opacity: 0, marginTop: 0, marginBottom: 0}, 800, function(){});
             $(this.previousElementSibling).animate({height: 0, opacity: 0,  marginTop: 0, marginBottom: 0}, 800, function(){});
             englarged = true;
@@ -111,7 +121,7 @@ function enlargeCard(e){
         } else if (this.id === "card3"){
             this.style.cursor = "unset";
             console.log("this is : " + this.id);
-            $(this).animate({maxWidth:"500px", width: "80%", height:"300px"}, 800, function(){});
+            $(this).animate(animationSettings, 800, function(){});
             $(this.previousElementSibling).animate({height: 0, opacity: 0, marginTop: 0, marginBottom: 0}, 800, function(){});
             $(this.previousElementSibling.previousElementSibling).animate({height: 0, opacity: 0,  marginTop: 0, marginBottom: 0}, 800, function(){});
             englarged = true;
@@ -142,7 +152,7 @@ function resetCardStyles(){
 
         console.log("Hellow from resert styles")
         card1.style.height = "10px"
-        card1.style.width = "190px";
+        card1.style.width = "200px";
         card1.style.maxWidth = "";
         card1.style.height = "60px";
         card1.style.marginTop = "50px";
@@ -156,7 +166,7 @@ function resetCardStyles(){
         card1.addEventListener("click", enlargeCard);
 
         card2.style.height = "10px"
-        card2.style.width = "190px";
+        card2.style.width = "200px";
         card2.style.maxWidth = "";
         card2.style.height = "60px";
         card2.style.marginTop = "50px";
@@ -170,7 +180,7 @@ function resetCardStyles(){
         card2.addEventListener("click", enlargeCard);
 
         card3.style.height = "10px"
-        card3.style.width = "190px";
+        card3.style.width = "200px";
         card3.style.maxWidth = "";
         card3.style.height = "60px";
         card3.style.marginTop = "50px";
