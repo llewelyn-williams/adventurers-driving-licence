@@ -96,9 +96,9 @@ const exam = {
       "questionText": "One morning you find yourself facing the mirror, contemplating your life, your very existence. Who are you?",
       "answers": {
         "answer1": {
-          "answerText": "Q5 Answer One",
-          "answerTextShort": "I am a thief.",
-          "answerStat": "A Thief",
+          "answerText": "I am a thief.",
+          "answerTextShort": "A Thief.",
+          "answerStat": "thief",
           "answerResponse": "I had my suspicions."
         },
         "answer2": {
