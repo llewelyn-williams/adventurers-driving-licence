@@ -30,10 +30,10 @@
 
         <section class="options">
             <div></h1>Options</h1></div>
-            <input type="checkbox" id="music" name="music" checked>
             <label for="music">Music</label>
-            <input type="checkbox" id="sounds" name="saounds" checked>
+            <input type="checkbox" id="music" name="music" onchange="handleMusicCheckbox(this);">
             <label for="sounds">Sounds</label>
+            <input type="checkbox" id="sounds" name="saounds" checked>
             <button id="delete-save" onclick="clearSave();">Delete Saved Licences</button>
             <button id="options-return" onclick="changePage('landing');">Back</button>
         </section>

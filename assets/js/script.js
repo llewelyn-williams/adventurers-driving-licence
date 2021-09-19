@@ -1,3 +1,5 @@
+
+
 // Various Elements by ID
 const questionCard = document.getElementById("question-display");
 const card1 = document.getElementById("card1");
@@ -58,6 +60,21 @@ card3.innerHTML = exam.question1.answers.answer3.answerTextShort;
 //Add event listener on back button to reset questions
 const footerBackButton = document.getElementById("footer-return");
 footerBackButton.addEventListener("click", initaliseQuestions);
+
+const backgroundMusic = new Audio("assets/sound/Town_-_Little_Village.ogg");
+
+// Turn music on.
+
+// Hint from StackOverflow
+// https://stackoverflow.com/questions/32438068/perform-an-action-on-checkbox-checked-or-unchecked-event-on-html-form
+function handleMusicCheckbox (checkBox) {
+    if(checkBox.checked){
+        backgroundMusic.play();
+    } else {
+        backgroundMusic.pause();
+    }
+}
+
 
 
 // Add event listentings for enlarging cards
