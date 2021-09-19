@@ -73,45 +73,45 @@ const exam = {
       "questionText": `As you pass a traveller on the road they call to you asking for help. <br>How will you be of assistance?`,
       "answers": {
         "answer1": {
-          "answerText": "Q4 Answer One",
-          "answerTextShort": "Q4 A1",
+          "answerText": "I use my stealth skills to inconspicuously fling myself into the roadside bushes, saving myself from a charity mugging.",
+          "answerTextShort": "Use Bushes",
           "answerStat": "thief",
-          "answerResponse": "Q4 A1 Response"
+          "answerResponse": "Understandable."
         },
         "answer2": {
           "answerText": "I punch it.",
           "answerTextShort": "Punch It",
           "answerStat": "fighter",
-          "answerResponse": "Q4 A2 Response"
+          "answerResponse": "Wow... I know punching stuff is fun but they were fellow human being. *shakes head *"
         },
         "answer3": {
-          "answerText": "Q4 Answer Three",
-          "answerTextShort": "Q4 A3",
+          "answerText": `I pick up my pace but send them my thoughts and magic, calling back "I'll say a spell for you."`,
+          "answerTextShort": "Thoughts and Magic",
           "answerStat": "mage",
-          "answerResponse": "Q4 A3 Response"
+          "answerResponse": "I'm sure they appreciate it."
         }
       }
     },
     "question5": {
-      "questionText": "Question 5",
+      "questionText": "One morning you find yourself facing the mirror, contemplating your life, your very existence. Who are you?",
       "answers": {
         "answer1": {
           "answerText": "Q5 Answer One",
-          "answerTextShort": "Q5 A1",
-          "answerStat": "thief",
-          "answerResponse": "Q5 A1 Response"
+          "answerTextShort": "I am a thief.",
+          "answerStat": "A Thief",
+          "answerResponse": "I had my suspicions."
         },
         "answer2": {
-          "answerText": "Q5 Answer Two",
-          "answerTextShort": "Q5 A2",
+          "answerText": "I punch it.",
+          "answerTextShort": "Puch It",
           "answerStat": "fighter",
-          "answerResponse": "Q5 A2 Response"
+          "answerResponse": "Yep. You're definitely a fighter."
         },
         "answer3": {
-          "answerText": "Q5 Answer Three",
-          "answerTextShort": "Q5 A3",
+          "answerText": " I am a mage.",
+          "answerTextShort": "A Mage",
           "answerStat": "mage",
-          "answerResponse": "Q5 A3 Response"
+          "answerResponse": "You look magical."
         }
       }
     }
