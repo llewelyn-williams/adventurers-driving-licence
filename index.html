@@ -24,31 +24,51 @@
                 <p>Your instructor will present you with adventuring scenarios, you just need to make your choice.</p>
             </div>
             <div class="landing-buttons">
-                <button id="start" onclick="changePage('question');">Start</button>
-                <button id="options" onclick="changePage('options');">Options</button>
-                <button id="licences" onclick="changePage('licences');">Licences</button>
+                <button type="button" id="start" onclick="changePage('question');">Start</button>
+                <button type="button" id="options" onclick="changePage('options');">Options</button>
+                <button type="button" id="licences" onclick="changePage('licences');">Licences</button>
             </div>
         </section>
 
         <section class="options">
-            <div></h1>Options</h1></div>
-            <label for="music">Music</label>
-            <input type="checkbox" id="music" name="music" onchange="handleMusicCheckbox(this);">
-            <label for="sounds">Sounds</label>
-            <input type="checkbox" id="sounds" name="saounds" checked>
-            <button id="delete-save" onclick="clearSave();">Delete Saved Licences</button>
-            <button id="options-return" onclick="changePage('landing');">Back</button>
+            <div><h2>Options</h2></div>
+            <form>
+                <fieldset>
+                    <legend>Music</legend>
+                    <div class="music-toggle">
+                        <label for="music">On / Off</label>
+                        <input type="checkbox" id="music" name="music" onchange="handleMusicCheckbox(this);">
+                    </div>
+                    <div class="music-slider">
+                        <label for="music-volume">Volume</label>
+                        <input type="range" name="music-volume" min="1" max="100" value="50" class="slider" id="music-volume" onchange="handleMusicSlider(this);">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Sound Effects</legend>
+                    <div class="music-toggle">
+                        <label for="sounds">On / Off</label>
+                        <input type="checkbox" id="sounds" name="sounds" checked onchange="handleSoundsCheckbox(this);">
+                    </div>
+                    <div class="music-slider">
+                        <label for="sounds-volume">Volume</label>
+                        <input type="range" name="sounds-volume" min="1" max="100" value="100" class="slider" id="sounds-volume" onchange="handleSoundsSlider(this);">
+                    </div>
+                </fieldset>
+                <button type="button" id="delete-save" onclick="clearSave();">Delete Saved Licences</button>
+                <button type="button" id="options-return" onclick="changePage('landing');">Back</button>
+            </form>
         </section>
 
         <section class="licences">
-            <div></h1>Licences</h1></div>
+            <div><h2>Licences</h2></div>
             <p id="thief-licence" class="individual-licence">&#x1F575;&#xFE0F; &nbsp Thief</p>
             <p id="fighter-licence" class="individual-licence">&#x1F91C; &nbsp Fighter</p>
             <p id="mage-licence" class="individual-licence">&#x1F9D9;&#x200D;&#x2640;&#xFE0F; &nbsp Mage</p>
             <p id="thiefter-licence" class="individual-licence">&#x1F575;&#xFE0F; &#x1F91C; &nbsp Thiefter</p>
             <p id="mief-licence" class="individual-licence">&#x1F9D9;&#x200D;&#x2640;&#xFE0F; &#x1F575;&#xFE0F; &nbsp Mief</p>
             <p id="maighter-licence" class="individual-licence">&#x1F9D9;&#x200D;&#x2640;&#xFE0F; &#x1F91C; &nbsp Maighter</p>
-            <button id="licences-return" onclick="changePage('landing');">Back</button>
+            <button type="button" id="licences-return" onclick="changePage('landing');">Back</button>
         </section>
 
         <section class="dialogue">
@@ -63,12 +83,12 @@
         </section>
 
         <section class="licence">
-            <div><h1>Licence</h1></div>
+            <div><h2>Licence</h2></div>
             <p id="result-display-text">You chose mostly</p>
         </section>
         
         <footer>Footer Content
-            <button id="footer-return" onclick="changePage('landing');">Back</button>
+            <button type="button" id="footer-return" onclick="changePage('landing');">Back</button>
         </footer>
     </div>
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>

@@ -24,6 +24,9 @@ let selectedAnswer = 0;
 let currentQuestion = 1;
 let enlarged = false;
 
+// Sound Effects Volume
+let soundsVolume = 1;
+
 function moveCard() {
     // assign the starting left to a variable
     const lpos = card1.style.left;
@@ -48,10 +51,35 @@ function moveCard() {
 function handleMusicCheckbox(checkBox) {
     if (checkBox.checked) {
         backgroundMusic.play();
+        backgroundMusic.loop = true;
+        // Also make sure that the volume is set correctly when turning on.
+        backgroundMusic.volume = document.getElementById("music-volume").value/100;
     } else {
         backgroundMusic.pause();
     }
 }
+
+function handleMusicSlider (slider){
+    backgroundMusic.volume = slider.value/100;
+}
+
+function handleSoundsCheckbox(checkBox) {
+    if (!checkBox.checked) {
+        soundsVolume = 0;
+    } else {
+        soundsVolume  = document.getElementById("sounds-volume").value/100;
+    }
+}
+
+function handleSoundsSlider(slider){
+    soundsVolume  = slider.value/100;
+    if (document.getElementById("sounds").checked){
+        const audio = new Audio("assets/sound/expand-box.ogg");
+        audio.volume = soundsVolume;
+        audio.play();
+    }
+}
+
 
 // Animate Clicked Card
 function enlargeCard(e) {
@@ -61,6 +89,7 @@ function enlargeCard(e) {
         // https://stackoverflow.com/questions/9419263/how-to-play-audio
 
         const audio = new Audio("assets/sound/expand-box.ogg");
+        audio.volume = soundsVolume;
         audio.play();
 
         const animationSettings = {
@@ -163,6 +192,7 @@ function resetCardStyles() {
 function acceptAnswer(e) {
 
     const audio = new Audio("assets/sound/flip-card.ogg");
+    audio.volume = soundsVolume;
     audio.play();
 
     let theQuestion = "question" + currentQuestion;
@@ -263,7 +293,7 @@ function calculateMostOf(abcs) {
        }
     });
 
-    //localStorage.setItem("licences", JSON.stringify(licencesSaved));
+    activeDeleteButton();
 
     // Display Licences
     displayLicences(JSON.parse(localStorage.getItem("licences")));
@@ -291,6 +321,9 @@ function displayLicences(achievedLicences) {
 }
 
 function clearSave() {
+    const audio = new Audio("assets/sound/crumpling-paper.ogg");
+    audio.volume = soundsVolume;
+    audio.play();
     licencesSaved.length = 0;
     localStorage.removeItem("licences");
     if (JSON.parse(localStorage.getItem("licences")) === null) {
@@ -298,6 +331,22 @@ function clearSave() {
     } else {
         displayLicences(JSON.parse(localStorage.getItem("licences")));
     }
+
+    deactiveDeleteButton();
+}
+
+function deactiveDeleteButton(){
+    const deleteButton = document.getElementById("delete-save");
+    deleteButton.disabled = true;
+    deleteButton.style.cssText = "background-color: #828282;";
+    deleteButton.innerText = "No Licences to Delete";
+}
+
+function activeDeleteButton(){
+    const deleteButton = document.getElementById("delete-save");
+    deleteButton.disabled = false;
+    deleteButton.style.cssText = "background-color: #f96363;";
+    deleteButton.innerText = "Delete Saved Licences";
 }
 
 function initaliseQuestions() {
@@ -356,6 +405,7 @@ function changePage(newpage) {
                 section.style.display = "block";
                 //Play start sound
                 const audio = new Audio("assets/sound/start.wav");
+                audio.volume = soundsVolume;
                 audio.play();
             } else {
                 section.style.display = "flex";
@@ -372,6 +422,9 @@ function init(){
     if (JSON.parse(localStorage.getItem("licences"))) {
         const licencesFromStorage = JSON.parse(localStorage.getItem("licences"));
         licencesSaved = licencesFromStorage;
+    } else {
+        //Disable the delete licences button if there aren't any
+        deactiveDeleteButton();
     }
 
     // Set the initial innerHTML of the page elements
@@ -393,6 +446,8 @@ function init(){
     displayLicences(JSON.parse(localStorage.getItem("licences")));
 
     twemoji.parse(document.body);
+
+
 }
 
 init();
