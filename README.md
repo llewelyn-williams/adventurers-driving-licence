@@ -202,7 +202,8 @@ Reused or inspired code from the following sources:
  - [Link 1](https://)
  - [Link 21](https://)
  - [Link 3](https://)
- - [Link 4](https://)
+ - [Ornaments Vectors by Vecteezy](https://www.vecteezy.com/free-vector/)
+ used as a flourish around the scenarios.
 
 ### Thanks
 
