@@ -23,7 +23,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 30px;
+    padding: 30px 30px 0;
     text-align: center;
 }
 
@@ -31,7 +31,7 @@ body {
     position: relative;
     width: 200px;
     height: 60px;
-    margin: 50px auto;
+    margin: 20px auto;
     background-color: #ffc93e3b;
     border: 2px solid #a96a2a47;
     text-align: center;
@@ -71,6 +71,10 @@ body {
 
 #result-display-text{
     height: 200px;
+}
+
+.wizard-emoji {
+    padding-top: 15px;
 }
 
 .main-title {
@@ -212,9 +216,9 @@ label {
 }
 
 form > button {
-    margin: 20px auto;
+    margin: 10px auto;
     background-color: #6b6d80;
-    color: black;
+    color: cornsilk;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.3rem;
     height: 50px;
@@ -225,6 +229,7 @@ form > button {
 #delete-save {
     margin:  15px 5px 20px;
     background-color: #f96363;
+    color: black;
     height: 60px;
 }
 
@@ -232,6 +237,16 @@ form > button {
     width: 100px;
 }
 
+#licence-return {
+    padding: 15px;
+    width: 6rem;
+    margin: 10px;
+    border-radius: 20px;
+    background-color: #6b6d80;
+    color: cornsilk;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.1rem;
+}
 
 header {
     background-color: #D7C9A5;
@@ -246,17 +261,28 @@ section {
 
 footer {
     margin: 0;
+    padding-bottom: 12px;
     height: 15%;
+    display: flex;
+}
+
+#footer-options{
+    margin: 0 auto;
+    background-color: #6b6d80;
+    color: cornsilk;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.1rem;
+    height: 50px;
+    border-radius: 20px;
 }
 
 .wrapper {
-    height: calc(100vh - 30px);
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 0;
     margin: 0;
-    padding-top: 30px;
 }
 
 /* The Licences */

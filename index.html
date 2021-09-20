@@ -18,7 +18,7 @@
     <div class="wrapper">
 
         <section class="landing">
-            <div>&#x1f9d9;&#x200d;&#x2642;&#xfe0f;</div>
+            <div class="wizard-emoji">&#x1f9d9;&#x200d;&#x2642;&#xfe0f;</div>
             <div class="main-title"><h1>Adventurers Driving Licence</h1></div>
             <div class="game-description">
                 <h4>Take the test, see what kind of adventuring you might be qualified to undertake.</h4>
@@ -37,7 +37,7 @@
                 <fieldset>
                     <legend>Music</legend>
                     <div class="music-toggle">
-                        <label for="music">On / Off</label>
+                        <label for="music">Enable</label>
                         <input type="checkbox" id="music" name="music" onchange="handleMusicCheckbox(this);">
                     </div>
                     <div class="music-slider">
@@ -48,7 +48,7 @@
                 <fieldset>
                     <legend>Sound Effects</legend>
                     <div class="music-toggle">
-                        <label for="sounds">On / Off</label>
+                        <label for="sounds">Enable</label>
                         <input type="checkbox" id="sounds" name="sounds" checked onchange="handleSoundsCheckbox(this);">
                     </div>
                     <div class="music-slider">
@@ -57,7 +57,7 @@
                     </div>
                 </fieldset>
                 <button type="button" id="delete-save" onclick="clearSave();">Delete Saved Licences</button>
-                <button type="button" id="options-return" onclick="changePage('landing');">Back</button>
+                <button type="button" id="options-return" onclick="handleOptionsBack();">Back</button>
             </form>
         </section>
 
@@ -86,10 +86,11 @@
         <section class="licence">
             <div><h2>Licence</h2></div>
             <p id="result-display-text">You chose mostly</p>
+            <button type="button" id="licence-return" onclick="changePage('landing');">Play Again</button>
         </section>
         
-        <footer>Footer Content
-            <button type="button" id="footer-return" onclick="changePage('landing');">Back</button>
+        <footer>
+            <button type="button" id="footer-options" onclick="changePage('options');">Options</button>
         </footer>
     </div>
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>

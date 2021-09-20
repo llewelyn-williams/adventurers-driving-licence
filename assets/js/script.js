@@ -14,6 +14,9 @@ const answers = [];
 // A variable that holds which page is desired.
 let page = "landing";
 
+//Page from
+let lastPage = "landing";
+
 //Array for the achieved licences
 let licencesSaved = [];
 
@@ -95,7 +98,7 @@ function enlargeCard(e) {
         const animationSettings = {
             maxWidth: "500px",
             width: "70%",
-            height: "100px",
+            height: "40px",
             paddingTop: "93px",
             paddingBottom: "93px",
             paddingLeft: "1rem",
@@ -164,8 +167,8 @@ function resetCardStyles() {
             height: 60px;
             width: 200px;
             maxWidth: none;
-            marginTop:50px;
-            marginBottom: 50px;
+            marginTop:20px;
+            marginBottom: 20px;
             opacity:100%;
             paddingBottom:"";
             paddingTop:"";
@@ -374,6 +377,9 @@ function initaliseQuestions() {
  */
 function changePage(newpage) {
 
+    //Take note of the page you are moving from
+    lastPage = page;
+
     // Change the page variable
     page = newpage;
 
@@ -395,6 +401,7 @@ function changePage(newpage) {
     function changeDisplay(section) {
         // Change the display over every section to none.
         section.style.display = "none";
+
         // But then if the section is the one you want...
         if (section === activeSection[0]) {
             console.log(page);
@@ -403,14 +410,40 @@ function changePage(newpage) {
                 section.style.display = "flex";
             } else if (page === "question") {
                 section.style.display = "block";
-                //Play start sound
-                const audio = new Audio("assets/sound/start.wav");
-                audio.volume = soundsVolume;
-                audio.play();
+                console.log("tur that butto back on here.")
+                turnOnMyFooterButton(); 
+                if(lastPage === "landing"){
+                    //Play start sound
+                    const audio = new Audio("assets/sound/start.wav");
+                    audio.volume = soundsVolume;
+                    audio.play();
+                }
             } else {
                 section.style.display = "flex";
             }
+            if (page != "question"){
+                // Do not display the button in the footer
+                document.getElementById("footer-options").style.display = "none";
+            }
+            if (page === "landing"){
+                initaliseQuestions();
+            }
         }
+    }
+}
+
+function turnOnMyFooterButton(){
+    console.log("turn on footer button with function")
+    document.getElementById("footer-options").style.display = "block";
+}
+
+function handleOptionsBack() {
+    if (lastPage === "question"){
+        console.log("Last Page was Question")
+        changePage("question");
+    } else {
+        console.log("last page was not question")
+        changePage("landing");
     }
 }
 
@@ -432,10 +465,6 @@ function init(){
     card1.innerHTML = exam.question1.answers.answer1.answerTextShort;
     card2.innerHTML = exam.question1.answers.answer2.answerTextShort;
     card3.innerHTML = exam.question1.answers.answer3.answerTextShort;
-
-    //Add event listener on back button to reset questions
-    const footerBackButton = document.getElementById("footer-return");
-    footerBackButton.addEventListener("click", initaliseQuestions);
 
     // Add event listener for enlarging cards
     card1.addEventListener("click", enlargeCard);
