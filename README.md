@@ -168,6 +168,9 @@ Design choices are reminiscent of the medieval tavern theme often found in fanta
 	 - To generate favicon.ico
   - [JSON Formatter - JSON Editor](https://jsonformatter.org/json-editor)
 	 - To help generate JSON structure
+  - [TinyPNG](https://tinypng.com/)
+	 - For quick and easy image optimisation.
+	 
 
 
 ## Testing

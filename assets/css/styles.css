@@ -17,6 +17,9 @@ body {
 }
 
 #question-display {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    line-height: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
