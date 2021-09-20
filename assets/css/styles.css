@@ -166,8 +166,9 @@ h2{
     text-align: center;
 }
 
-h3 {
+.call-to-action{
     font-size: 20px;
+    font-weight: bold;
 }
 
 form {
