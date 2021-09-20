@@ -289,7 +289,7 @@ footer {
 .flourish {
     height: 5px;
     margin: 0 auto;
-    filter: opacity(80%);
+    filter: opacity(60%);
     display: flex;
     width: 66%;
     margin-top: 3px;
@@ -300,6 +300,12 @@ footer {
     margin-bottom: 3px;
 }
 
+@media screen and (min-width: 600px) {
+    .flourish {
+        width: 33%;
+        height: 10px;
+    }
+}
 /* The Licences */
 
 .individual-licence{
