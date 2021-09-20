@@ -1,21 +1,30 @@
-
+const allLicences = ["Thief", "Fighter", "Mage", "Thiefter", "Mief", "Maighter"]
 
 // Various Elements by ID
 const questionCard = document.getElementById("question-display");
+const backgroundMusic = new Audio("assets/sound/Town_-_Little_Village.ogg");
 const card1 = document.getElementById("card1");
 const card2 = document.getElementById("card2");
 const card3 = document.getElementById("card3");
 
+// this presumably creates 120fps style fluidity
+const cardAnimator = setInterval(moveCard, 1000 / 120);
+const answers = [];
 
-//Animations
+// A variable that holds which page is desired.
+let page = "landing";
 
-// position it nearly completely off to the left
-document.getElementById("card1").style.left = - (screen.width/2 + 60) + "px";
+//Array for the achieved licences
+let licencesSaved = [];
 
-// this presumabley creates 120fps style fluidity
-const cardAnimator = setInterval(moveCard, 1000/120);
+// Progressing Questions
+let selectedAnswer = 0;
 
-function moveCard(){
+// Variable to track which question we are on.
+let currentQuestion = 1;
+let enlarged = false;
+
+function moveCard() {
     // assign the starting left to a variable
     const lpos = card1.style.left;
     // get just the number part from the "..px" left value
@@ -23,7 +32,6 @@ function moveCard(){
     /* Increase it and then append the "px" back on
     updating the left value to be that. */
     card1.style.left = (myNum + 12) + "px";
-
 
     // stop animating
     if (myNum >= 0) {
@@ -34,59 +42,20 @@ function moveCard(){
     }
 }
 
-//Licences Set
-let licencesSaved = [];
-
-//load any licences
-if (JSON.parse(localStorage.getItem("licences"))) {
-    const licencesFromStorage = JSON.parse(localStorage.getItem("licences"));
-    licencesSaved = licencesFromStorage;
-}
-
-
-// Progressing Questions
-const answers = [];
-let selectedAnswer = 0;
-
-// Vaiable to track which question we are on.
-let currentQuestion = 1;
-
-// Set the initial innerHTML of the page elements
-questionCard.innerHTML = exam.question1.questionText;
-card1.innerHTML = exam.question1.answers.answer1.answerTextShort;
-card2.innerHTML = exam.question1.answers.answer2.answerTextShort;
-card3.innerHTML = exam.question1.answers.answer3.answerTextShort;
-
-//Add event listener on back button to reset questions
-const footerBackButton = document.getElementById("footer-return");
-footerBackButton.addEventListener("click", initaliseQuestions);
-
-const backgroundMusic = new Audio("assets/sound/Town_-_Little_Village.ogg");
-
-// Turn music on.
-
+// Music Toggle Handler
 // Hint from StackOverflow
 // https://stackoverflow.com/questions/32438068/perform-an-action-on-checkbox-checked-or-unchecked-event-on-html-form
-function handleMusicCheckbox (checkBox) {
-    if(checkBox.checked){
+function handleMusicCheckbox(checkBox) {
+    if (checkBox.checked) {
         backgroundMusic.play();
     } else {
         backgroundMusic.pause();
     }
 }
 
-
-
-// Add event listentings for enlarging cards
-card1.addEventListener("click", enlargeCard);
-card2.addEventListener("click", enlargeCard);
-card3.addEventListener("click", enlargeCard);
-
-let enlarged = false;
-
 // Animate Clicked Card
-function enlargeCard(e){
-    if (!enlarged){
+function enlargeCard(e) {
+    if (!enlarged) {
 
         // Tip for handling audio from StackOverflow
         // https://stackoverflow.com/questions/9419263/how-to-play-audio
@@ -95,58 +64,58 @@ function enlargeCard(e){
         audio.play();
 
         const animationSettings = {
-            maxWidth:"500px", 
-            width: "80%", 
-            height:"100px", 
-            paddingTop: "93px", 
-            paddingBottom: "93px", 
-            paddingLeft:"1rem", 
+            maxWidth: "500px",
+            width: "80%",
+            height: "100px",
+            paddingTop: "93px",
+            paddingBottom: "93px",
+            paddingLeft: "1rem",
             paddingRight: "1rem"
         }
 
         console.log("this is : " + this);
-        if(this.id === "card1"){
+        if (this.id === "card1") {
             this.style.cursor = "unset";
-            $(this).animate(animationSettings, 800, function(){});
-            $(this.nextElementSibling).animate({height: 0, opacity: 0, marginTop: 0, marginBottom: 0}, 800, function(){});
-            $(this.nextElementSibling.nextElementSibling).animate({height: 0, opacity: 0,  marginTop: 0, marginBottom: 0}, 800, function(){});
-            englarged = true;
+            $(this).animate(animationSettings, 800, function () { });
+            $(this.nextElementSibling).animate({ height: 0, opacity: 0, marginTop: 0, marginBottom: 0 }, 800, function () { });
+            $(this.nextElementSibling.nextElementSibling).animate({ height: 0, opacity: 0, marginTop: 0, marginBottom: 0 }, 800, function () { });
+            enlarged = true;
             //Remove englargement event listener
             card1.removeEventListener("click", enlargeCard);
             // Add event listener for accepting answers
             // But only after the animation has finished.
-            setTimeout(function(){
+            setTimeout(function () {
                 card1.addEventListener("click", acceptAnswer);
                 card1.style.cursor = "pointer";
             }, 800);
-            
-        } else if (this.id === "card2"){
+
+        } else if (this.id === "card2") {
             this.style.cursor = "unset";
             console.log("this is : " + this.id);
-            $(this).animate(animationSettings, 800, function(){});
-            $(this.nextElementSibling).animate({height: 0, opacity: 0, marginTop: 0, marginBottom: 0}, 800, function(){});
-            $(this.previousElementSibling).animate({height: 0, opacity: 0,  marginTop: 0, marginBottom: 0}, 800, function(){});
-            englarged = true;
+            $(this).animate(animationSettings, 800, function () { });
+            $(this.nextElementSibling).animate({ height: 0, opacity: 0, marginTop: 0, marginBottom: 0 }, 800, function () { });
+            $(this.previousElementSibling).animate({ height: 0, opacity: 0, marginTop: 0, marginBottom: 0 }, 800, function () { });
+            enlarged = true;
             //Remove englargement event listener
             card2.removeEventListener("click", enlargeCard);
             // Add event listener for accepting answers
             // But only after the animation has finished.
-            setTimeout(function(){
+            setTimeout(function () {
                 card2.addEventListener("click", acceptAnswer);
                 card2.style.cursor = "pointer";
             }, 800);
-        } else if (this.id === "card3"){
+        } else if (this.id === "card3") {
             this.style.cursor = "unset";
             console.log("this is : " + this.id);
-            $(this).animate(animationSettings, 800, function(){});
-            $(this.previousElementSibling).animate({height: 0, opacity: 0, marginTop: 0, marginBottom: 0}, 800, function(){});
-            $(this.previousElementSibling.previousElementSibling).animate({height: 0, opacity: 0,  marginTop: 0, marginBottom: 0}, 800, function(){});
-            englarged = true;
+            $(this).animate(animationSettings, 800, function () { });
+            $(this.previousElementSibling).animate({ height: 0, opacity: 0, marginTop: 0, marginBottom: 0 }, 800, function () { });
+            $(this.previousElementSibling.previousElementSibling).animate({ height: 0, opacity: 0, marginTop: 0, marginBottom: 0 }, 800, function () { });
+            enlarged = true;
             //Remove englargement event listener
             card3.removeEventListener("click", enlargeCard);
             // Add event listener for accepting answers
             // But only after the animation has finished.
-            setTimeout(function(){
+            setTimeout(function () {
                 card3.addEventListener("click", acceptAnswer);
                 card3.style.cursor = "pointer";
             }, 800);
@@ -155,58 +124,34 @@ function enlargeCard(e){
         // Change the Card text to the full text
         let theQuestion = "question" + currentQuestion;
         const preNumberNamePart = "card";
-        this.innerHTML = exam[theQuestion].answers["answer"+Number(this.id.slice(preNumberNamePart.length, this.id.length))].answerText;
+        this.innerHTML = exam[theQuestion].answers["answer" + Number(this.id.slice(preNumberNamePart.length, this.id.length))].answerText;
     }
 }
 
-function resetCardStyles(){
-    if (englarged){
-        // let i = 1;
-        // for (i; i < 4; i += 1){
+function resetCardStyles() {
+    if (enlarged) {
 
-        // }
-        //$("#card1").finish()
-
-        console.log("Hellow from resert styles")
-        card1.style.height = "10px"
-        card1.style.width = "200px";
-        card1.style.maxWidth = "";
-        card1.style.height = "60px";
-        card1.style.marginTop = "50px";
-        card1.style.marginBottom = "50px";
-        card1.style.opacity = "100%";
-        card1.style.paddingBottom = "";
-        card1.style.paddingTop = "";
-        card1.style.paddingLeft = "";
-        card1.style.paddingRight = "";
+        const resetStyle = `
+            height: 60px;
+            width: 200px;
+            maxWidth: none;
+            marginTop:50px;
+            marginBottom: 50px;
+            opacity:100%;
+            paddingBottom:"";
+            paddingTop:"";
+            paddingLeft:"";
+            paddingRight:""
+        `
+        card1.style.cssText = resetStyle;
         card1.removeEventListener("click", acceptAnswer);
         card1.addEventListener("click", enlargeCard);
 
-        card2.style.height = "10px"
-        card2.style.width = "200px";
-        card2.style.maxWidth = "";
-        card2.style.height = "60px";
-        card2.style.marginTop = "50px";
-        card2.style.marginBottom = "50px";
-        card2.style.opacity = "100%";
-        card2.style.paddingBottom = "";
-        card2.style.paddingTop = "";
-        card2.style.paddingLeft = "";
-        card2.style.paddingRight = "";
+        card2.style.cssText = resetStyle;
         card2.removeEventListener("click", acceptAnswer);
         card2.addEventListener("click", enlargeCard);
 
-        card3.style.height = "10px"
-        card3.style.width = "200px";
-        card3.style.maxWidth = "";
-        card3.style.height = "60px";
-        card3.style.marginTop = "50px";
-        card3.style.marginBottom = "50px";
-        card3.style.opacity = "100%";
-        card3.style.paddingBottom = "";
-        card3.style.paddingTop = "";
-        card3.style.paddingLeft = "";
-        card3.style.paddingRight = "";
+        card3.style.cssText = resetStyle;
         card3.removeEventListener("click", acceptAnswer);
         card3.addEventListener("click", enlargeCard);
 
@@ -215,7 +160,7 @@ function resetCardStyles(){
 }
 
 // Advance the tracker and change the values of the cards.
-function acceptAnswer(e){
+function acceptAnswer(e) {
 
     const audio = new Audio("assets/sound/flip-card.ogg");
     audio.play();
@@ -225,7 +170,7 @@ function acceptAnswer(e){
     const preNumberNamePart = "card";
     // Append stat to aswers array
     selectedAnswer = Number(this.id.slice(preNumberNamePart.length, this.id.length));
-    answerStat = exam[theQuestion].answers["answer"+selectedAnswer].answerStat;
+    answerStat = exam[theQuestion].answers["answer" + selectedAnswer].answerStat;
     answers.push(answerStat);
     console.log(answers);
 
@@ -233,7 +178,7 @@ function acceptAnswer(e){
     // I wasn't sure how to "get the length" of a object as it were
     // Hint found on StackOverflow:
     // https://stackoverflow.com/questions/5223/length-of-a-javascript-object
-    if(currentQuestion < Object.keys(exam).length){
+    if (currentQuestion < Object.keys(exam).length) {
         currentQuestion += 1;
         console.log(currentQuestion);
         theQuestion = "question" + currentQuestion;
@@ -257,7 +202,7 @@ function acceptAnswer(e){
 
 }
 
-function calculateMostOf(abcs){
+function calculateMostOf(abcs) {
     let thiefs = 0;
     let fighters = 0;
     let mages = 0;
@@ -265,35 +210,35 @@ function calculateMostOf(abcs){
     let i = 0;
     let licence = "";
 
-    for(i = 0; i < abcs.length; i+= 1){
-        if (abcs[i] === "thief"){
+    for (i = 0; i < abcs.length; i += 1) {
+        if (abcs[i] === "thief") {
             thiefs += 1;
-        } else if (abcs[i] === "fighter"){
+        } else if (abcs[i] === "fighter") {
             fighters += 1;
-        } else if (abcs[i] === "mage"){
+        } else if (abcs[i] === "mage") {
             mages += 1;
         }
     }
 
-    if(thiefs > fighters && thiefs > mages){
+    if (thiefs > fighters && thiefs > mages) {
         most = ` <span style="font-style: italic;">Thief</span>s`;
         licence = "Thief";
-    } else if (fighters > thiefs && fighters > mages){
+    } else if (fighters > thiefs && fighters > mages) {
         most = ` <span style="font-style: italic;">Fighter</span>s`;
         licence = "Fighter";
-    } else if (mages > thiefs && mages > fighters){
+    } else if (mages > thiefs && mages > fighters) {
         most = ` <span style="font-style: italic;">Mage</span>s`;
         licence = "Mage";
-    } else if (thiefs === fighters && thiefs > mages){
+    } else if (thiefs === fighters && thiefs > mages) {
         most = ` <span style="font-style: italic;">Thief & Fighter</span>s`;
         licence = "Thiefter";
-    } else if (fighters === mages && fighters > thiefs){
+    } else if (fighters === mages && fighters > thiefs) {
         most = ` <span style="font-style: italic;">Fighter & Mage</span>s`;
         licence = "Maighter";
-    } else if (mages === thiefs && mages > fighters){
+    } else if (mages === thiefs && mages > fighters) {
         most = ` <span style="font-style: italic;">Thief & Mage</span>s`;
         licence = "Mief";
-    } else if (thiefs === fighters && thiefs === mages){
+    } else if (thiefs === fighters && thiefs === mages) {
         most = ` <span style="font-style: italic;">Thief & Fighter & Mage</span>s`;
         licence = "Magical Invisible Fist";
     }
@@ -304,50 +249,48 @@ function calculateMostOf(abcs){
     console.log("licencesSaved is " + licencesSaved);
     https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage
     localStorage.setItem("licences", JSON.stringify(licencesSaved));
-    
+
     // Display Licences
     displayLicences(JSON.parse(localStorage.getItem("licences")));
-    
+
     return [most, licence];
-    
+
 }
 
-const allLicences = ["Thief", "Fighter", "Mage", "Thiefter", "Mief", "Maighter"]
-
-function displayLicences(achievedLicences){
-
+function displayLicences(achievedLicences) {
     // Run though each possible licnce type
-    allLicences.forEach(function(theLicence){
+    allLicences.forEach(function (theLicence) {
         // Check that there are actually licences awarded to display
-        if (achievedLicences != null && achievedLicences.length > 0){
+        if (achievedLicences != null && achievedLicences.length > 0) {
             // If you find the one we're looking at this iteration...
-            if (achievedLicences.includes(theLicence)){
-            // Change the display to "flex" so that it displays
-            document.getElementById(theLicence.toLowerCase() +"-licence").style.display = "flex";
+            if (achievedLicences.includes(theLicence)) {
+                // Change the display to "flex" so that it displays
+                document.getElementById(theLicence.toLowerCase() + "-licence").style.display = "flex";
             }
         } else {
             //Hide them all.
-            document.getElementById(theLicence.toLowerCase() +"-licence").style.display = "none";
-            twemoji.parse(document.getElementById(theLicence.toLowerCase() +"-licence"));
+            document.getElementById(theLicence.toLowerCase() + "-licence").style.display = "none";
+            twemoji.parse(document.getElementById(theLicence.toLowerCase() + "-licence"));
         }
     })
 }
 
-function clearSave(){
+function clearSave() {
     licencesSaved.length = 0;
     localStorage.removeItem("licences");
-    if (JSON.parse(localStorage.getItem("licences")) === null){
+    if (JSON.parse(localStorage.getItem("licences")) === null) {
         displayLicences("");
     } else {
         displayLicences(JSON.parse(localStorage.getItem("licences")));
     }
-    
 }
 
-function initaliseQuestions(){
-
-    console.log("initalisation of questions...")
-    //https://medium.com/@lauenroth/how-to-empty-a-const-array-365a81916e10
+function initaliseQuestions() {
+    /* Tip gained for setting the array.length to
+       zero as a way of "clearing" a const array
+       from medium article.
+       https://medium.com/@lauenroth/how-to-empty-a-const-array-365a81916e10
+    */
     answers.length = 0;
     selectedAnswer = 0;
     currentQuestion = 1;
@@ -359,11 +302,6 @@ function initaliseQuestions(){
 
     licence = "";
 }
-
-// Page Display
-
-// A variable that holds which page is desired.
-let page = "landing";
 
 /**
  * Hides all sections other than the one specified.
@@ -390,16 +328,16 @@ function changePage(newpage) {
     // Iterate through all the sections
 
     sections.forEach(changeDisplay);
-        function changeDisplay(section){
+    function changeDisplay(section) {
         // Change the display over every section to none.
         section.style.display = "none";
         // But then if the section is the one you want...
-        if (section === activeSection[0]){
+        if (section === activeSection[0]) {
             console.log(page);
             // Change just its display back to block or flex
-            if (page === "landing" || page === "licence"){
+            if (page === "landing" || page === "licence") {
                 section.style.display = "flex";
-            } else if (page === "question"){
+            } else if (page === "question") {
                 section.style.display = "block";
                 //Play start sound
                 const audio = new Audio("assets/sound/start.wav");
@@ -411,7 +349,35 @@ function changePage(newpage) {
     }
 }
 
-changePage(page);
-displayLicences(JSON.parse(localStorage.getItem("licences")));
+function init(){
+    // position it nearly completely off to the left
+    document.getElementById("card1").style.left = - (screen.width / 2 + 60) + "px";
 
-twemoji.parse(document.body);
+    //load any licenses
+    if (JSON.parse(localStorage.getItem("licences"))) {
+        const licencesFromStorage = JSON.parse(localStorage.getItem("licences"));
+        licencesSaved = licencesFromStorage;
+    }
+
+    // Set the initial innerHTML of the page elements
+    questionCard.innerHTML = exam.question1.questionText;
+    card1.innerHTML = exam.question1.answers.answer1.answerTextShort;
+    card2.innerHTML = exam.question1.answers.answer2.answerTextShort;
+    card3.innerHTML = exam.question1.answers.answer3.answerTextShort;
+
+    //Add event listener on back button to reset questions
+    const footerBackButton = document.getElementById("footer-return");
+    footerBackButton.addEventListener("click", initaliseQuestions);
+
+    // Add event listener for enlarging cards
+    card1.addEventListener("click", enlargeCard);
+    card2.addEventListener("click", enlargeCard);
+    card3.addEventListener("click", enlargeCard);
+
+    changePage(page);
+    displayLicences(JSON.parse(localStorage.getItem("licences")));
+
+    twemoji.parse(document.body);
+}
+
+init();
