@@ -91,7 +91,7 @@ function enlargeCard(e){
         // Tip for handling audio from StackOverflow
         // https://stackoverflow.com/questions/9419263/how-to-play-audio
 
-        const audio = new Audio("assets/sound/card-enlarge.wav");
+        const audio = new Audio("assets/sound/expand-box.ogg");
         audio.play();
 
         const animationSettings = {
@@ -217,7 +217,7 @@ function resetCardStyles(){
 // Advance the tracker and change the values of the cards.
 function acceptAnswer(e){
 
-    const audio = new Audio("assets/sound/turn-page.wav");
+    const audio = new Audio("assets/sound/flip-card.ogg");
     audio.play();
 
     let theQuestion = "question" + currentQuestion;
