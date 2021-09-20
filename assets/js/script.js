@@ -65,7 +65,7 @@ function enlargeCard(e) {
 
         const animationSettings = {
             maxWidth: "500px",
-            width: "80%",
+            width: "70%",
             height: "100px",
             paddingTop: "93px",
             paddingBottom: "93px",
