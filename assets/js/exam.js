@@ -97,7 +97,7 @@ const exam = {
       "answers": {
         "answer1": {
           "answerText": "I am a thief.",
-          "answerTextShort": "A Thief.",
+          "answerTextShort": "A Thief",
           "answerStat": "thief",
           "answerResponse": "I had my suspicions."
         },
