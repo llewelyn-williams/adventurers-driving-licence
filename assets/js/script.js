@@ -233,6 +233,9 @@ function acceptAnswer(e) {
         // Add the licence element to the page.
         const achievedLicence = document.getElementById(calculatedAnswers[1].toLowerCase() + "-licence").cloneNode(true);
         document.getElementById("result-display-text").append(achievedLicence);
+        const audio = new Audio("assets/sound/Interaction_With_Magic_Gem.wav");
+        audio.volume = soundsVolume;
+        audio.play();
     }
 
     resetCardStyles();
@@ -293,6 +296,7 @@ function calculateMostOf(abcs) {
         // Matches licences already awarded, therefore no need to do anything.
        } else {
         localStorage.setItem("licences", JSON.stringify(licencesSaved));
+        removeNoLicencesMessage();
        }
     });
 
@@ -331,6 +335,7 @@ function clearSave() {
     localStorage.removeItem("licences");
     if (JSON.parse(localStorage.getItem("licences")) === null) {
         displayLicences("");
+        addNoLicencesMessage();
     } else {
         displayLicences(JSON.parse(localStorage.getItem("licences")));
     }
@@ -447,6 +452,22 @@ function handleOptionsBack() {
     }
 }
 
+function addNoLicencesMessage() {
+    const noLicences = document.createElement("div");
+    noLicences.innerText = "Take the test to earn your first adverturer licence."
+    noLicences.id = "no-licences";
+    document.getElementsByClassName("licences")[0].children[0].appendChild(noLicences);
+}
+
+function removeNoLicencesMessage() {
+    if (document.getElementById("no-licences")){
+        document.getElementById("no-licences").remove();
+    } else {
+        //it's not there so no need to remove it
+    }
+    
+}
+
 function init(){
     // position it nearly completely off to the left
     document.getElementById("card1").style.left = - (screen.width / 2 + 60) + "px";
@@ -458,6 +479,7 @@ function init(){
     } else {
         //Disable the delete licences button if there aren't any
         deactiveDeleteButton();
+        addNoLicencesMessage();
     }
 
     // Set the initial innerHTML of the page elements
