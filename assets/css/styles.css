@@ -8,6 +8,11 @@ body {
     background-color: slategray;
     background-image: url("../images/brown_ice_by_darkwood67.jpg");
     background-size: 100vw 100vh;
+    font-family: 'Port Lligat Slab', serif;
+}
+
+input[type="button"]{
+    font-family: 'Poppins', sans-serif;
 }
 
 @media screen and (orientation: landscape) {
@@ -220,7 +225,7 @@ form > button {
     background-color: #6b6d80;
     color: cornsilk;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     height: 50px;
     border-radius: 20px;
     
