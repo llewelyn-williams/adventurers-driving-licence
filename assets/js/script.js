@@ -2,7 +2,7 @@ const allLicences = ["Thief", "Fighter", "Mage", "Thiefter", "Mief", "Maighter"]
 
 // Various Elements by ID
 const questionCard = document.getElementById("question-display");
-const backgroundMusic = new Audio("assets/sound/Town_-_Little_Village.ogg");
+const backgroundMusic = new Audio("assets/sound/enchanted-valley.mp3");
 const card1 = document.getElementById("card1");
 const card2 = document.getElementById("card2");
 const card3 = document.getElementById("card3");
