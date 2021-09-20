@@ -7,8 +7,13 @@ body {
     padding: 0;
     background-color: slategray;
     background-image: url("../images/brown_ice_by_darkwood67.jpg");
-    background-size:cover;
+    background-size: 100vw 100vh;
+}
 
+@media screen and (orientation: landscape) {
+    body {
+        background-image: url("../images/brown_ice_by_darkwood67-portrait.jpg");
+    }
 }
 
 #question-display {
