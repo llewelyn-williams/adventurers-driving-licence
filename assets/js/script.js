@@ -192,9 +192,13 @@ function acceptAnswer(e) {
         console.log(answers);
         changePage("licence");
 
-        //Display Text and Licence Achieved
-        document.getElementById("result-display-text").innerHTML = "You chose mostly" + calculateMostOf(answers)[0];
-        const achievedLicence = document.getElementById(calculateMostOf(answers)[1].toLowerCase() + "-licence").cloneNode(true);
+        // Display Text and Licence Achieved
+        // calculateMostOf(answers) will return a string of length 2.
+        const calculatedAnswers = calculateMostOf(answers);
+        // Add text to the page.
+        document.getElementById("result-display-text").innerHTML = "You chose mostly" + calculatedAnswers[0];
+        // Add the licence element to the page.
+        const achievedLicence = document.getElementById(calculatedAnswers[1].toLowerCase() + "-licence").cloneNode(true);
         document.getElementById("result-display-text").append(achievedLicence);
     }
 
@@ -247,8 +251,19 @@ function calculateMostOf(abcs) {
     //TO DO - CHECK AND PREVENT DUPLICTES
     licencesSaved.push(licence);
     console.log("licencesSaved is " + licencesSaved);
-    https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage
-    localStorage.setItem("licences", JSON.stringify(licencesSaved));
+    /* Code / Guidance on how to use an array in localStorag via StackOverflow
+       https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage
+    */
+
+    licencesSaved.forEach(function(individualLicence){
+       if(JSON.parse(localStorage.getItem("licences")) != null && JSON.parse(localStorage.getItem("licences")).includes(individualLicence)){
+        // Matches licences already awarded, therefore no need to do anything.
+       } else {
+        localStorage.setItem("licences", JSON.stringify(licencesSaved));
+       }
+    });
+
+    //localStorage.setItem("licences", JSON.stringify(licencesSaved));
 
     // Display Licences
     displayLicences(JSON.parse(localStorage.getItem("licences")));
