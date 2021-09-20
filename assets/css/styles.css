@@ -42,7 +42,7 @@ body {
 
 .landing {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -74,10 +74,7 @@ body {
     padding: 0px 10px 0px 10px;
     width: 15rem;
     text-align: center;
-
 }
-
-
 
 .main-title > h1 {
     font-size: 2.5rem;
@@ -101,7 +98,7 @@ body {
     padding: 15px;
     width: 15rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-content: center;
@@ -109,21 +106,10 @@ body {
 
 .landing-buttons > button{
     padding: 15px;
-    width: 10rem;
-    margin: 1rem;
+    width: 6rem;
+    margin: 10px;
     border-radius: 20px;;
 
-}
-
-@media screen and (max-width:600px){
-    .landing-buttons > button {
-        width: 6rem;
-        margin: 10px;
-    }
-
-    .landing-buttons {
-        flex-direction: row;
-    }
 }
 
 #start{
@@ -146,6 +132,16 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.1rem;
 }
+
+@media screen and (orientation: landscape) {
+    .landing {
+        flex-direction: column;
+    }
+    .main-title {
+        width: 80%
+    }
+}
+
 
 h1{
     line-height: 1.5rem;
@@ -188,4 +184,27 @@ footer {
     align-items: center;
     flex-wrap: nowrap;
     padding: 0.5rem 1rem;
+}
+
+/* Media Queries for very narrow devices. */
+
+@media screen and (max-width:360px) {
+    html {
+        font-size: 16px;
+    }
+    .game-description {
+        padding: 0 15px;
+    }
+}
+
+@media screen and (max-width:280px) {
+    .game-description {
+        padding: 0 15px;
+    }
+    .main-title {
+        padding: 0;
+    }
+    .landing-buttons {
+        padding: 15px 0;
+    }
 }
