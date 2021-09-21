@@ -1,5 +1,5 @@
 // Array of all the licences you can achieve.
-const allLicences = ["Thief", "Fighter", "Mage", "Thiefter", "Mief", "Maighter"]
+const allLicences = ["Thief", "Fighter", "Mage", "Thiefter", "Mief", "Maighter"];
 
 // Various Elements by ID
 const questionCard = document.getElementById("question-display");
@@ -105,7 +105,7 @@ function enlargeCard(e) {
             paddingBottom: "93px",
             paddingLeft: "1rem",
             paddingRight: "1rem"
-        }
+        };
 
         if (this.id === "card1") {
             this.style.cursor = "unset";
@@ -173,7 +173,7 @@ function resetCardStyles() {
             paddingTop:"";
             paddingLeft:"";
             paddingRight:""
-        `
+        `;
         card1.style.cssText = resetStyle;
         card1.removeEventListener("click", acceptAnswer);
         card1.addEventListener("click", enlargeCard);
@@ -228,9 +228,9 @@ function acceptAnswer(e) {
         // Add the licence element to the page.
         const achievedLicence = document.getElementById(calculatedAnswers[1].toLowerCase() + "-licence").cloneNode(true);
         document.getElementById("result-display-text").append(achievedLicence);
-        const audio = new Audio("assets/sound/Interaction_With_Magic_Gem.wav");
-        audio.volume = soundsVolume;
-        audio.play();
+        const awardNoise = new Audio("assets/sound/Interaction_With_Magic_Gem.wav");
+        awardNoise.volume = soundsVolume;
+        awardNoise.play();
     }
 
     resetCardStyles();
@@ -285,7 +285,7 @@ function calculateMostOf(abcs) {
         /* Code / Guidance on how to use an array in localStorag via StackOverflow
         https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage
         */
-       if(JSON.parse(localStorage.getItem("licences")) != null && JSON.parse(localStorage.getItem("licences")).includes(individualLicence)){
+       if(JSON.parse(localStorage.getItem("licences")) !== null && JSON.parse(localStorage.getItem("licences")).includes(individualLicence)){
         // Matches licences already awarded, therefore no need to do anything.
        } else {
         localStorage.setItem("licences", JSON.stringify(licencesSaved));
@@ -305,7 +305,7 @@ function displayLicences(achievedLicences) {
     // Run though each possible licnce type
     allLicences.forEach(function (theLicence) {
         // Check that there are actually licences awarded to display
-        if (achievedLicences != null && achievedLicences.length > 0) {
+        if (achievedLicences !== null && achievedLicences.length > 0) {
             // If you find the one we're looking at this iteration...
             if (achievedLicences.includes(theLicence)) {
                 // Change the display to "flex" so that it displays
@@ -316,7 +316,7 @@ function displayLicences(achievedLicences) {
             document.getElementById(theLicence.toLowerCase() + "-licence").style.display = "none";
             twemoji.parse(document.getElementById(theLicence.toLowerCase() + "-licence"));
         }
-    })
+    });
 }
 
 function clearSave() {
@@ -415,7 +415,7 @@ function changePage(newpage) {
             } else {
                 section.style.display = "flex";
             }
-            if (page != "question"){
+            if (page !== "question"){
                 // Do not display the button in the footer
                 document.getElementById("footer-options").style.display = "none";
             }
@@ -440,7 +440,7 @@ function handleOptionsBack() {
 
 function addNoLicencesMessage() {
     const noLicences = document.createElement("div");
-    noLicences.innerText = "Take the test to earn your first adverturer licence."
+    noLicences.innerText = "Take the test to earn your first adverturer licence.";
     noLicences.id = "no-licences";
     document.getElementsByClassName("licences")[0].children[0].appendChild(noLicences);
 }
@@ -451,7 +451,6 @@ function removeNoLicencesMessage() {
     } else {
         // It's not there so no need to remove it
     }
-    
 }
 
 function init(){
