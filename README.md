@@ -1,7 +1,7 @@
 # Adventurers Driving Licence
 
 A short multiple choice RPG adventure simulating a tongue-in-cheek "driving test" for budding stereotypical role play adventurers. 
-The player is one of these budding adventurers and it "tested" and awarded their specific licence based on their choices.
+The player is one of these budding adventurers and is "tested" and awarded their specific licence based on their choices.
 
 **The live project is available on GitHub Pages: [Adventurers Driving Licence](https://llewelyn-williams.github.io/adventurers-driving-licence/)**
 
@@ -123,11 +123,11 @@ Three main content areas can provide the functions required.
 
 #### Wireframes
 
-Wireframes showing layout plans for differnt devices.
+Wireframes showing layout plans for different devices.
 
 ![An image previewing some of the wireframes made for the project](assets/wireframes/wireframes.png)
 
-The complete set of wireframes can be viewed in via these images:
+The complete set of wireframes can be viewed via these images:
  - [Mobile Wireframes](assets/wireframes/mobile-wireframes.png)
  - [Tablet Wireframes](assets/wireframes/tablet-wireframes.png)
  - [Desktop Wireframes](assets/wireframes/desktop-wireframes.png)
@@ -228,6 +228,6 @@ Reused or inspired code from the following sources:
 
 ### Thanks
 
- - Code Institue
- - My Code Instute Mentor
+ - Code Institute
+ - My Code Institute Mentor
  - My Long Suffering Partner
