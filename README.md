@@ -187,7 +187,23 @@ See separate [TESTING.md](TESTING.md)
 
 ## Deployment Instructions
 
-Deployment via GitHubPages
+Forking a Repository
+1. Navigate to GitHub Repository
+2. Use the **Fork** link (node tree icon) from the top right of the page justunder the header.
+3. You now have a copy of the repository among your own.
+
+[Further Instruction](https://help.github.com/articles/fork-a-repo)
+
+Cloning a Repository
+1. Navigate to GitHub Repository
+2. Use the **Code** dropdown button from just above the repository on the right.
+3. Copy the relevant address or command to use as instructed with your chosen method.
+4. For example in Git Bash use the command `$ git clone https://github.com/USERNAME/REPOSITORY`
+5. You now have a local copy of the Repository in the directory where you ran the command.
+
+[Further Instruction](https://help.github.com/articles/cloning-a-repository/)
+
+GitHubPages
 
  1. Navigate to GitHub Repository
  2. Use the **Settings** link (cog icon) from the menu atop the repository.
@@ -196,6 +212,7 @@ Deployment via GitHubPages
  5. Click **Save**
  6. The site can be found at the address `https://`**github-username**`.github.io/`**repository-name**
 
+[Further Instruction](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-your-site)
 
 ## Acknowledgements
 
