@@ -100,21 +100,31 @@ I only used a small amount of jQuery when compared to the entire library, it mig
  
 ## Accessibility
 ### Expected
-...
+The site should not have any major accessibility issues as shown by accessibility tests.
 ### Test
-... Lighthouse, contrast specific
+Using Lighthouse from Chrome Developer tools, I ran a report.
 ### Result
-...
+There was an issue raised that heading tags were being skipped, as I had an `<h1>` followed by an `<h4>` 
 ### Fix
-...
-
-
+I initially tried to fix this by changing the `<h4>` to an `<h3>` thinking this would resolve the problem as I had `<h2>` elements elsewhere on the page, however it did not, so I changed the `<h4>` into a `<p>` instead and adjusted it's styles to match what I had previously.
+ 
+ 
 ## SEO
 ### Expected
-...
+No major issues to show from SEO report.
 ### Test
-...
+Using Lighthouse from Chrome Developer tools, I ran a report.
 ### Result
-...
+It showed that the SEO could be impacted by a lack of a description meta tag.
 ### Fix
-...
+I added in a description meta tag and re-ran the report and the issue no longer showed.
+ 
+## Useability
+### Expected
+That users should be able to use the site and play the game as intended.
+### Test
+Throughout development, I had my partner attempt to play the game while I watched and listened to their feedback.
+### Result
+Throughout development they explained to me the parts that they would like to be different in some way that they felt would improve the experience for them.
+### Fix
+I implemented changes and added functionality and features along the development path based on the feedback I received.
