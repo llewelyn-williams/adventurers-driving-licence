@@ -164,11 +164,11 @@ Design choices are reminiscent of the medieval tavern theme often found in fanta
 	 - Editing, cropping, scaling of site images
  - [Dynamic Dummy Image Generator](https://dummyimage.com/)
 	 - To provide placeholder images during development
-  - [favicon.io](https://favicon.io/emoji-favicons/martial-arts-uniform)
+ - [favicon.io](https://favicon.io/emoji-favicons/martial-arts-uniform)
 	 - To generate favicon.ico
-  - [JSON Formatter - JSON Editor](https://jsonformatter.org/json-editor)
+ - [JSON Formatter - JSON Editor](https://jsonformatter.org/json-editor)
 	 - To help generate JSON structure
-  - [TinyPNG](https://tinypng.com/)
+ - [TinyPNG](https://tinypng.com/)
 	 - For quick and easy image optimisation.
 	 
 
@@ -195,7 +195,12 @@ Deployment via GitHubPages
 ### Content
 
 Reused or inspired code from the following sources:
- - [Link 1](https://)
+ - [StackOverflow Questions & Answers](https://stackoverflow.com/questions/) various, links to specifics in code.
+ - [Medium](https://medium.com/) linked to specific in code.
+
+ Used for referecing:
+ [MDN Web Docs](https://developer.mozilla.org/en-US/)
+ [W3 Schools](https://www.w3schools.com/)
 
 ### Media
 
