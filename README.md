@@ -22,7 +22,8 @@ The player is one of these budding adventurers and it "tested" and awarded their
   * [Surface](#surface)
 - [Technologies Used](#technologies-used)
   * [Languages](#languages)
-  * [Frameworks](#frameworks)
+  * [Libraries](#libraries)
+  * [APIs](#apis)
   * [Other Services and Software](#other-services-and-software)
 - [Testing](#testing)
 - [Deployment Instructions](#deployment-instructions)
@@ -143,9 +144,11 @@ Design choices are reminiscent of the medieval tavern theme often found in fanta
  - CSS
  - JavaScript
 
+### Libraries
+ - [jQuery](https://jquery.com/)
 
-### Frameworks
- - Bootstrap
+ ### APIs
+ - [Twemoji](https://github.com/twitter/twemoji#api)
  
 ### Other Services and Software
  - Git
@@ -198,9 +201,9 @@ Reused or inspired code from the following sources:
  - [StackOverflow Questions & Answers](https://stackoverflow.com/questions/) various, links to specifics in code.
  - [Medium](https://medium.com/) linked to specific in code.
 
- Used for referecing:
- [MDN Web Docs](https://developer.mozilla.org/en-US/)
- [W3 Schools](https://www.w3schools.com/)
+ Used for referencing:
+ - [MDN Web Docs](https://developer.mozilla.org/en-US/)
+ - [W3 Schools](https://www.w3schools.com/)
 
 ### Media
 
