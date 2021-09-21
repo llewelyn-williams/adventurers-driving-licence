@@ -364,7 +364,6 @@ function initaliseQuestions() {
     card2.innerHTML = exam.question1.answers.answer2.answerTextShort;
     card3.innerHTML = exam.question1.answers.answer3.answerTextShort;
 
-    licence = "";
 }
 
 /**
