@@ -82,6 +82,9 @@ Possible features to be considered for future releases.
  - More explanatory text.
 	 * Giving details to the player about what licenses they have earned.
 
+ - Autosaving of Options.
+	 * The ability to have the settings for sound and music carry over between sessions.
+
 ## User Experience Design
 
 
