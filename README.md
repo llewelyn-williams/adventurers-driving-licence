@@ -78,7 +78,9 @@ Possible features to be considered for future releases.
 
  - More scenarios.
 	 * The game can be lengthened by adding more questions and answers.
-
+ 
+ - More explanatory text.
+	 * Giving details to the player about what licenses they have earned.
 
 ## User Experience Design
 
@@ -98,6 +100,7 @@ For a user to want to interact with the game it should meet the following:
  - Provide immediate feedback
  - Be visually clear and well laid out
  - Give the user a reason to continue playing
+ - Provide amusement
 
 The target is a game that continually makes the next move for the player obvious, allows them, always provides feedback when they interact and can be accessed via different devices (mobile, tablet, PC).
 
@@ -108,9 +111,10 @@ The target is a game that continually makes the next move for the player obvious
 | **As a player**, I want to be able to jump right in and start playing right away. | The game mechanics should be based on previously well understood conventions or fully explained in clear language when something new is introduced. |
 | I want to feel confident that my input is being received accurately. | A combination of forms of feedback should be presented when input is received to make it very clear what the user is submitting.|
 | I want to be able to have some control over non fundamental game elements such as background music. | A settings section within the menu to allow the user to control these types of elements. |
+| I want to be amused by the game. | The combination of features  should be enjoyable to use and experience. Narrative elements can be off beat for humour. |
 | **As a returning player**, I want to be able to pick up where I left off. | The capability to save progress. Either manually or automatically.|
 | I want to be able to refresh myself on any parts of the game I might’ve forgotten about. | Provide a guide from within the menu.|
-| **As player who has completed the game** , I want to see a record of what I have achieved. | A different display to indicate completion and a record of what has been achieved is accessible from within the menu. |
+| **As a player who has completed the game** , I want to see a record of what I have achieved. | A different display to indicate completion and a record of what has been achieved is accessible from within the menu. |
 
 ### Structure
 
@@ -198,7 +202,7 @@ Cloning a Repository
 1. Navigate to GitHub Repository
 2. Use the **Code** dropdown button from just above the repository on the right.
 3. Copy the relevant address or command to use as instructed with your chosen method.
-4. For example in Git Bash use the command `$ git clone https://github.com/USERNAME/REPOSITORY`
+4. For example in Git Bash use the command `$ git clone https://github.com/`**github-username**`/`**repository-name**
 5. You now have a local copy of the Repository in the directory where you ran the command.
 
 [Further Instruction](https://help.github.com/articles/cloning-a-repository/)
