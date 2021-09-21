@@ -230,7 +230,6 @@ form > button {
     margin: 10px auto;
     background-color: #6b6d80;
     color: cornsilk;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.1rem;
     height: 50px;
     border-radius: 20px;
@@ -358,7 +357,34 @@ footer {
     margin: 10px auto;
     background-color: #6b6d80;
     color: cornsilk;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.1rem;
+    height: 50px;
+    border-radius: 20px;
+    width: 100px;
+}
+
+.four-oh-four {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.fourohfour-footer{
+    margin: 0 auto;
+}
+
+#home {
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    margin: 10px auto;
+    background-color: #6b6d80;
+    color: cornsilk;
     font-size: 1.1rem;
     height: 50px;
     border-radius: 20px;

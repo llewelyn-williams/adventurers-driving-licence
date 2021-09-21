@@ -453,6 +453,10 @@ function removeNoLicencesMessage() {
     }
 }
 
+function homeHandler(){
+    window.location.href = "index.html";
+}
+
 function init(){
     // position it nearly completely off to the left
     document.getElementById("card1").style.left = - (screen.width / 2 + 60) + "px";
