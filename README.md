@@ -5,7 +5,7 @@ The player is one of these budding adventurers and it "tested" and awarded their
 
 **The live project is available on GitHub Pages: [Adventurers Driving Licence](https://llewelyn-williams.github.io/adventurers-driving-licence/)**
 
-![Image showing the project displaying responsively on different device types.](assets/readme-images/mockups.png)
+![Image showing the project displaying responsively on different device types.](assets/readme-images/responsive-mockup.png)
 
 ## Table of Contents
 - [Features](#features)
