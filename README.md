@@ -121,7 +121,7 @@ The target is a game that continually makes the next move for the player obvious
 Three main content areas can provide the functions required.
 1. The game area, where images and text are displayed along with interactive elements and access to menus
 2. A menu area where settings can be accessed
-3. A credits area, where attribution can be provided from within the game itself.
+3. A credits area, where attribution can be provided from within the game itself. (Through development this area came tobe the Licences Collection area instead.)
 
 ### Skeleton
 
