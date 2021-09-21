@@ -35,34 +35,34 @@ The player is one of these budding adventurers and is "tested" and awarded their
 
 ## Features
 
-A responsive interface with retro graphics. Characters. Story. Options. Specific Licences.
+Take your adventurers driving licence test and be awarded your specific licence dependent on your test results. Retake the test and earn more licences until you collect all 6. Adjust the music and sound effects from the options menu to your liking.
 
 ### Current Features
 These features have been implemented in the project.
 
- - Feature 1
-	 * Bullet Point 1
-	 * Bullet Point 2
+ - Multiple Choice Adventurer Test
+	 * Choose from three different options.
+	 * Selected options expand with a sound effect to reveal more descriptive text.
 	 
-![Feature 1](assets/readme-images/feature-hero-image.png)
+![Multiple Choice Adventurer Test](assets/readme-images/cards.png)
 
- - Feature 2
-	 * Bullet Point 1
-	 * Bullet Point 2
+ - Earn Your Adventurer Licence
+	 * Your licence received is determined by the choices you make.
+	 * Continue playing to collect more licences.
 	 
-![Feature 2](assets/readme-images/feature-collapsed-menu.png)
+![Test Completed](assets/readme-images/play-again.png)
 
- - Feature 3
-	 * Bullet Point 1
-	 * Bullet Point 2
+ - Configurable Audio and Save Management
+	 * Turn the music and sound effects on or off and adjust their volume independently.
+	 * Delete all the licences you have earned so far and start over.
 	 
-![Feature 3](assets/readme-images/feature-google-maps.png)
+![Options](assets/readme-images/options.png)
 
- - Feature 4
-	 * Bullet Point 1
-	 * Bullet Point 2
+ - Collect and view licences.
+	 * Specific area to view your licences collection.
+	 * Collect 6 in total.
 	 
-![Feature 4](assets/readme-images/feature-contact-form.png)
+![Licence Collection](assets/readme-images/licences.png)
 
 
 ### Future Features
