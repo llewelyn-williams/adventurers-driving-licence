@@ -67,13 +67,17 @@ These features have been implemented in the project.
 
 ### Future Features
 Possible features to be considered for future releases.
- - Feature 1
-	 * Bullet Point 1
-	 * Bullet Point 2
+ - Sometimes derisive commentary from your wizard examiner.
+	 * The wizard taking you though the test scenarios responds to your choices ,letting his opinion of you be known.
+	 * Character and dialogue add to the fun, and create a more game-like feeling as opposed to online-quiz.
 
- - Feature 2
-	 * Bullet Point 1
-	 * Bullet Point 2
+ - Additional feedback, sound effects and animations.
+	 * Sound effects for all the buttons.
+	 * Haptic feedback for mobile devices.
+	 * Transition effects between test scenarios.
+
+ - More scenarios.
+	 * The game can be lengthened by adding more questions and answers.
 
 
 ## User Experience Design
