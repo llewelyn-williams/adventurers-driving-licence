@@ -1,3 +1,4 @@
+// Array of all the licences you can achieve.
 const allLicences = ["Thief", "Fighter", "Mage", "Thiefter", "Mief", "Maighter"]
 
 // Various Elements by ID
@@ -9,6 +10,8 @@ const card3 = document.getElementById("card3");
 
 // this presumably creates 120fps style fluidity
 const cardAnimator = setInterval(moveCard, 1000 / 120);
+
+// Array to hold answers selected
 const answers = [];
 
 // A variable that holds which page is desired.
@@ -83,7 +86,6 @@ function handleSoundsSlider(slider){
     }
 }
 
-
 // Animate Clicked Card
 function enlargeCard(e) {
     if (!enlarged) {
@@ -105,14 +107,13 @@ function enlargeCard(e) {
             paddingRight: "1rem"
         }
 
-        console.log("this is : " + this);
         if (this.id === "card1") {
             this.style.cursor = "unset";
             $(this).animate(animationSettings, 800, function () { });
             $(this.nextElementSibling).animate({ height: 0, opacity: 0, marginTop: 0, marginBottom: 0 }, 800, function () { });
             $(this.nextElementSibling.nextElementSibling).animate({ height: 0, opacity: 0, marginTop: 0, marginBottom: 0 }, 800, function () { });
             enlarged = true;
-            //Remove englargement event listener
+            // Remove englargement event listener
             card1.removeEventListener("click", enlargeCard);
             // Add event listener for accepting answers
             // But only after the animation has finished.
@@ -123,12 +124,11 @@ function enlargeCard(e) {
 
         } else if (this.id === "card2") {
             this.style.cursor = "unset";
-            console.log("this is : " + this.id);
             $(this).animate(animationSettings, 800, function () { });
             $(this.nextElementSibling).animate({ height: 0, opacity: 0, marginTop: 0, marginBottom: 0 }, 800, function () { });
             $(this.previousElementSibling).animate({ height: 0, opacity: 0, marginTop: 0, marginBottom: 0 }, 800, function () { });
             enlarged = true;
-            //Remove englargement event listener
+            // Remove englargement event listener
             card2.removeEventListener("click", enlargeCard);
             // Add event listener for accepting answers
             // But only after the animation has finished.
@@ -138,12 +138,11 @@ function enlargeCard(e) {
             }, 800);
         } else if (this.id === "card3") {
             this.style.cursor = "unset";
-            console.log("this is : " + this.id);
             $(this).animate(animationSettings, 800, function () { });
             $(this.previousElementSibling).animate({ height: 0, opacity: 0, marginTop: 0, marginBottom: 0 }, 800, function () { });
             $(this.previousElementSibling.previousElementSibling).animate({ height: 0, opacity: 0, marginTop: 0, marginBottom: 0 }, 800, function () { });
             enlarged = true;
-            //Remove englargement event listener
+            // Remove englargement event listener
             card3.removeEventListener("click", enlargeCard);
             // Add event listener for accepting answers
             // But only after the animation has finished.
@@ -205,7 +204,6 @@ function acceptAnswer(e) {
     selectedAnswer = Number(this.id.slice(preNumberNamePart.length, this.id.length));
     answerStat = exam[theQuestion].answers["answer" + selectedAnswer].answerStat;
     answers.push(answerStat);
-    console.log(answers);
 
     // But only advance if there's still another quetion in exam to do so
     // I wasn't sure how to "get the length" of a object as it were
@@ -213,7 +211,6 @@ function acceptAnswer(e) {
     // https://stackoverflow.com/questions/5223/length-of-a-javascript-object
     if (currentQuestion < Object.keys(exam).length) {
         currentQuestion += 1;
-        console.log(currentQuestion);
         theQuestion = "question" + currentQuestion;
         questionCard.innerHTML = exam[theQuestion].questionText;
         card1.innerHTML = exam[theQuestion].answers.answer1.answerTextShort;
@@ -221,8 +218,6 @@ function acceptAnswer(e) {
         card3.innerHTML = exam[theQuestion].answers.answer3.answerTextShort;
     } else {
         // Last answer given. End.
-        console.log("END!");
-        console.log(answers);
         changePage("licence");
 
         // Display Text and Licence Achieved
@@ -284,14 +279,12 @@ function calculateMostOf(abcs) {
     }
 
     //Add the achieved licnce to the set of licences
-    //TO DO - CHECK AND PREVENT DUPLICTES
     licencesSaved.push(licence);
-    console.log("licencesSaved is " + licencesSaved);
-    /* Code / Guidance on how to use an array in localStorag via StackOverflow
-       https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage
-    */
 
     licencesSaved.forEach(function(individualLicence){
+        /* Code / Guidance on how to use an array in localStorag via StackOverflow
+        https://stackoverflow.com/questions/3357553/how-do-i-store-an-array-in-localstorage
+        */
        if(JSON.parse(localStorage.getItem("licences")) != null && JSON.parse(localStorage.getItem("licences")).includes(individualLicence)){
         // Matches licences already awarded, therefore no need to do anything.
        } else {
@@ -306,7 +299,6 @@ function calculateMostOf(abcs) {
     displayLicences(JSON.parse(localStorage.getItem("licences")));
 
     return [most, licence];
-
 }
 
 function displayLicences(achievedLicences) {
@@ -409,13 +401,11 @@ function changePage(newpage) {
 
         // But then if the section is the one you want...
         if (section === activeSection[0]) {
-            console.log(page);
             // Change just its display back to block or flex
             if (page === "landing" || page === "licence") {
                 section.style.display = "flex";
             } else if (page === "question") {
                 section.style.display = "block";
-                console.log("tur that butto back on here.")
                 turnOnMyFooterButton(); 
                 if(lastPage === "landing"){
                     //Play start sound
@@ -438,16 +428,13 @@ function changePage(newpage) {
 }
 
 function turnOnMyFooterButton(){
-    console.log("turn on footer button with function")
     document.getElementById("footer-options").style.display = "block";
 }
 
 function handleOptionsBack() {
     if (lastPage === "question"){
-        console.log("Last Page was Question")
         changePage("question");
     } else {
-        console.log("last page was not question")
         changePage("landing");
     }
 }
@@ -497,8 +484,6 @@ function init(){
     displayLicences(JSON.parse(localStorage.getItem("licences")));
 
     twemoji.parse(document.body);
-
-
 }
 
 init();
