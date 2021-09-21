@@ -450,7 +450,7 @@ function removeNoLicencesMessage() {
     if (document.getElementById("no-licences")){
         document.getElementById("no-licences").remove();
     } else {
-        //it's not there so no need to remove it
+        // It's not there so no need to remove it
     }
     
 }
@@ -459,12 +459,12 @@ function init(){
     // position it nearly completely off to the left
     document.getElementById("card1").style.left = - (screen.width / 2 + 60) + "px";
 
-    //load any licenses
+    // load any licenses
     if (JSON.parse(localStorage.getItem("licences"))) {
         const licencesFromStorage = JSON.parse(localStorage.getItem("licences"));
         licencesSaved = licencesFromStorage;
     } else {
-        //Disable the delete licences button if there aren't any
+        // Disable the delete licences button if there aren't any
         deactiveDeleteButton();
         addNoLicencesMessage();
     }
