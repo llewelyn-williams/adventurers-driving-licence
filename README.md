@@ -175,7 +175,7 @@ Design choices are reminiscent of the medieval tavern theme often found in fanta
 
 ## Testing
 
-See separate testing.md
+See separate [TESTING.md](TESTING.md)
 
 
 ## Deployment Instructions
