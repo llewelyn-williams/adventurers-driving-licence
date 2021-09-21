@@ -228,7 +228,7 @@ function acceptAnswer(e) {
         // Add the licence element to the page.
         const achievedLicence = document.getElementById(calculatedAnswers[1].toLowerCase() + "-licence").cloneNode(true);
         document.getElementById("result-display-text").append(achievedLicence);
-        const awardNoise = new Audio("assets/sound/Interaction_With_Magic_Gem.wav");
+        const awardNoise = new Audio("assets/sound/award-noise.wav");
         awardNoise.volume = soundsVolume;
         awardNoise.play();
     }
