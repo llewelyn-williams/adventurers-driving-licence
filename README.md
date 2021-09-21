@@ -119,7 +119,7 @@ Three main content areas can provide the functions required.
 
 #### Navigation Tree
 
-![Diagram showing the navigation flow](assets/wireframes/rhondda-taekwondo-sitemap.jpg)
+![Diagram showing the navigation flow](assets/wireframes/navigation.jpg)
 
 #### Wireframes
 
