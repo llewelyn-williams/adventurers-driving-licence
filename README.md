@@ -199,11 +199,24 @@ Reused or inspired code from the following sources:
 
 ### Media
 
- - [Link 1](https://)
- - [Link 21](https://)
- - [Link 3](https://)
- - [Ornaments Vectors by Vecteezy](https://www.vecteezy.com/free-vector/)
+ - [Interaction With Magic Gem](https://www.gamedevmarket.net/asset/rpg-fantasy-game-interface-sounds/) by [Potion Audio](https://www.gamedevmarket.net/member/potion-audio/)
+ used as award-noise.
+ - [UI Buy Button 04](https://www.gamedevmarket.net/asset/rpg-fantasy-game-interface-sounds/) by [Potion Audio](https://www.gamedevmarket.net/member/potion-audio/)
+ used as test starting sound effect.
+ - [Crumpling Paper](https://freesound.org/people/quantumriver/sounds/552152/) by [quantumriver](https://freesound.org/people/quantumriver/)
+ used as sound on delete button.
+ - [PaperPage1.wav](https://freesound.org/people/mateusboga/sounds/219022/) by [mateusboga](https://freesound.org/people/mateusboga/)
+ used as box expansion sound effect.
+ - [flipCard.wav](https://freesound.org/people/Splashdust/sounds/84322/) by [Splashdust](https://freesound.org/people/Splashdust/)
+ used as test progression sound effect.
+ - [Enchanted Valley](https://incompetech.com/music/royalty-free/mp3-royaltyfree/Enchanted%20Valley.mp3) by [Kevin MacLeod](https://incompetech.com/music/royalty-free/music.html)
+ used as background music.
+ - [Flourish](https://www.vecteezy.com/vector-art/330172-flourishes-calligraphic-ornaments-and-frames) by [Lia-Aramburu](https://www.vecteezy.com/members/lia-aramburu) via [Vecteezy](https://www.vecteezy.com/free-vector/ornaments)
  used as a flourish around the scenarios.
+ - [Brown Ice](https://www.deviantart.com/darkwood67/art/brown-ice-136812258) by [darkwood67](https://www.deviantart.com/darkwood67)
+ used as the background image.
+ - Mockups Screenshot from [Am I Responsive](http://ami.responsivedesign.is/)
+ - Emoji used for favicon.ico and throughout is part of [Twemoji](https://twemoji.twitter.com/)
 
 ### Thanks
 
